@@ -63,7 +63,7 @@ jobs:
       #     npm install
       - run:
           name: install firebase
-          command: npm install -g firebase-tools
+          command: sudo npm install -g firebase-tools
       - run:
           name: deploy
           command: './node_modules/.bin/firebase deploy --token=$FIREBASE_TOKEN'
