@@ -38,11 +38,23 @@ jobs:
       docker:
         - image: circleci/node:10.0.0
       working_directory: ~/repo
-      steps:
-      - checkout
+      steps: 
+      - checkout 
       - run:
-          name: update-npm-master
+          name: update-npm
           command: 'sudo npm install -g npm@latest'
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package-lock.json" }}
+      - run:
+          name: install-npm-wee
+          command: npm install
+      - save_cache:
+          key: dependency-cache-{{ checksum "package-lock.json" }}
+          paths:
+            - ./node_modules
+      - run:
+          name: test
+          command: npm test
       - run:
           name: Deploy to firebase
           command: './node_modules/.bin/firebase deploy --token=$FIREBASE_TOKEN'
