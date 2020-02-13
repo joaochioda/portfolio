@@ -59,7 +59,7 @@ jobs:
           name: Build
           command: npm build
       - run: |
-          cd functions
+          cd functions/
           npm install
       - run:
           name: deploy
