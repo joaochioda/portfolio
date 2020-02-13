@@ -57,7 +57,7 @@ jobs:
           command: npm test
       - run:
           name: Build
-          command: npm build
+          command: npm run build
       - run: |
           cd functions/
           npm install
