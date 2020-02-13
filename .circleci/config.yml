@@ -34,16 +34,16 @@ jobs:
       - run: # run tests
           name: test
           command: npm test
-  # deploy-prod:
-  #   build:
-  #     docker:
-  #       - image: circleci/node:10.0.0
-  #     working_directory: ~/repo
-  #     steps:
-  #     - checkout
-  #     - run:
-  #         name: update-npm-master
-  #         command: 'sudo npm install -g npm@latest'
+  deploy-prod:
+    build:
+      docker:
+        - image: circleci/node:10.0.0
+      working_directory: ~/repo
+      steps:
+      - checkout
+      - run:
+          name: update-npm-master
+          command: 'sudo npm install -g npm@latest'
 
 workflows:
   version: 2
@@ -54,9 +54,9 @@ workflows:
             branches:
               ignore:
                 - master
-      # - deploy-prod:
-      #     filters:
-      #       branches:
-      #         only: master
+      - deploy-prod:
+          filters:
+            branches:
+              only: master
 
             
