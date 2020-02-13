@@ -51,8 +51,14 @@ workflows:
   version: 2
   build-deploy:
     jobs:
-      - deploy-dev
+      - deploy-dev:
+          filters:
+            branches:
+              ignore:
+                - master
       - deploy-prod:
-        filters:
-          branches:
-            only: master
+          filters:
+            branches:
+              only: master
+
+            
