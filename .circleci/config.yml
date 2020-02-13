@@ -49,11 +49,11 @@ workflows:
   version: 2
   build-deploy:
     jobs:
-      - deploy-dev
-      #     filters:
-      #       branches:
-      #         ignore:
-      #           - master
+      - deploy-dev:
+          filters:
+            branches:
+              ignore:
+                - master
       # - deploy-prod:
       #     filters:
       #       branches:
