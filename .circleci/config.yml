@@ -46,7 +46,7 @@ jobs:
       - restore_cache:
           key: dependency-cache-{{ checksum "package-lock.json" }}
       - run:
-          name: install-npm-wee
+          name: install dependencies
           command: npm install
       - save_cache:
           key: dependency-cache-{{ checksum "package-lock.json" }}
@@ -56,8 +56,8 @@ jobs:
           name: test
           command: npm test
       - run:
-          name: Instal firebase
-          command: sudo npm install -g firebase-tools
+          name: Build
+          command: npm build
       - run:
           name: deploy
           command: ./node_modules/.bin/firebase deploy --token=$FIREBASE_TOKEN --non-interactive
