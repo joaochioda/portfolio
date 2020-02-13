@@ -58,10 +58,9 @@ jobs:
       - run:
           name: Build
           command: npm build
-      - run:
-          name: install i
-           script:
-             - cd functions; npm install; cd ..
+      - run: |
+          cd functions
+          npm install
       - run:
           name: deploy
           command: './node_modules/.bin/firebase deploy --token=$FIREBASE_TOKEN'
