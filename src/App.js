@@ -9,7 +9,7 @@ function App() {
 			<header className="App-header">
 				<img src={logo} className="App-logo" alt="logo" />
 				<span>
-					Oi, meu nome é Jão
+					Oi, meu nome é Jão38
 				</span>
 			</header>
 		</div>
