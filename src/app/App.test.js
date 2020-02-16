@@ -1,9 +1,14 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import App from './App';
+import { configure, mount } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
 
-test('renders learn react link', () => {
+configure({adapter: new Adapter()});
+
+test('texto principal', () => {
+
 	const { getByText } = render(<App />);
-	const linkElement = getByText('Oi, meu nome é afeseila');
+	const linkElement = getByText('Welcome to my app');
 	expect(linkElement).toBeInTheDocument();
 });
