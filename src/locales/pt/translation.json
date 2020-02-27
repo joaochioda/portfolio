@@ -1,3 +1,8 @@
 {
-    "Welcome to React": "Bem vindo a minha aplicação"
+  "Welcome to React": "Bem vindo a minha aplicação",
+  "header": {
+    "whoami": "Quem sou eu",
+    "projects": "Projetos",
+    "contact": "Contato"
   }
+}
