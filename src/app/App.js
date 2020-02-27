@@ -1,18 +1,20 @@
 import React from 'react';
 import logo from '../logo.svg';
-import { withNamespaces } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 import './App.css';
-import i18n from '../i18n';
 import Header from '../header/Header';
-function App({ t }) {
+
+export default function App() {
+	const { t, i18n } = useTranslation();
 	const changeLanguage = (lng) => {
 		i18n.changeLanguage(lng);
 	};
+	console.log(t);
 
 	return (
 		<div className="App">
 			<header className="App-header">
-				<Header/>
+				<Header />
 				<div>
 					<button onClick={() => changeLanguage('pt')}>pt</button>
 					<button onClick={() => changeLanguage('en')}>en</button>
@@ -24,4 +26,3 @@ function App({ t }) {
 	);
 }
 
-export default withNamespaces()(App);
