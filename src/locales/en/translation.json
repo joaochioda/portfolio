@@ -1,5 +1,7 @@
 {
-  "Welcome to React": "Bem vindo a minha aplicação",
+  "title": {
+    "teste": "sou burro"
+  },
   "header": {
     "whoami": "Who am I",
     "projects": "Projects",

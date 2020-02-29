@@ -9,7 +9,6 @@ export default function App() {
 	const changeLanguage = (lng) => {
 		i18n.changeLanguage(lng);
 	};
-	console.log(t);
 
 	return (
 		<div className="App">
@@ -20,7 +19,7 @@ export default function App() {
 					<button onClick={() => changeLanguage('en')}>en</button>
 				</div>
 				<img src={logo} className="App-logo" alt="logo" />
-				<h1>{t('Welcome to React')}</h1>
+				<h1>{t('title.teste')}</h1>
 			</header>
 		</div>
 	);
