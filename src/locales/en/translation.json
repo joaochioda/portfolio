@@ -5,6 +5,7 @@
   "header": {
     "whoami": "Who am I",
     "projects": "Projects",
-    "contact": "Contact"
+    "contact": "Contact",
+    "menu": "Menu"
   }
 }

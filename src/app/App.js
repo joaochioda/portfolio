@@ -1,8 +1,8 @@
 import React from 'react';
-import logo from '../logo.svg';
 import { useTranslation } from 'react-i18next';
 import './App.css';
 import Header from '../header/Header';
+import Main from '../main/Main';
 
 export default function App() {
 	const { t, i18n } = useTranslation();
@@ -12,15 +12,13 @@ export default function App() {
 
 	return (
 		<div className="App">
-			<header className="App-header">
-				<Header />
-				<div>
-					<button onClick={() => changeLanguage('pt')}>pt</button>
-					<button onClick={() => changeLanguage('en')}>en</button>
-				</div>
-				<img src={logo} className="App-logo" alt="logo" />
-				<h1>{t('title.teste')}</h1>
-			</header>
+			<Header />
+			<div>
+				<button onClick={() => changeLanguage('pt')}>pt</button>
+				<button onClick={() => changeLanguage('en')}>en</button>
+			</div>
+
+			<Main/>
 		</div>
 	);
 }
