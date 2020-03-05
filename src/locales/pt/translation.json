@@ -7,5 +7,12 @@
     "projects": "Projetos",
     "contact": "Contato",
     "menu": "Menu"
+  },
+  "contact": {
+    "email": "Email",
+    "name": "Nome",
+    "subject": "Assunto",
+    "message": "Mensagem",
+    "send": "Enviar"
   }
 }

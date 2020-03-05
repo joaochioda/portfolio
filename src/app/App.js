@@ -5,7 +5,7 @@ import Header from '../header/Header';
 import Main from '../main/Main';
 
 export default function App() {
-	const { t, i18n } = useTranslation();
+	const { i18n } = useTranslation();
 	const changeLanguage = (lng) => {
 		i18n.changeLanguage(lng);
 	};

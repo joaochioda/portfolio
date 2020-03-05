@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import Button from '@material-ui/core/Button';
-import { makeStyles } from '@material-ui/core/styles';
 
 export const Div = styled.div`
     max-width: 1111px;
@@ -15,6 +14,8 @@ export const But = styled(Button)`
 `;
 
 export const Joao = styled.div`
+width: 100%;
+background-color: #702079;
 @media (min-width: 600px) {
   display:none;
 }

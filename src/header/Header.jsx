@@ -22,7 +22,7 @@ export default function Header() {
 
 			<Nav>
 				<Joao>
-					<Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
+					<Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick} color="primary">
 						{t('header.menu')}
 					</Button>
 					<Menu
@@ -45,6 +45,8 @@ export default function Header() {
 						</Ul>
 					</Div>
 				</Guilherme>
+
+
 			</Nav>
 		</div>
 
