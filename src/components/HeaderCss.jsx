@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import Button from '@material-ui/core/Button';
-import { makeStyles } from '@material-ui/core/styles';
 
 export const Div = styled.div`
     max-width: 1111px;
@@ -14,13 +13,15 @@ export const But = styled(Button)`
     background: linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)
 `;
 
-export const Joao = styled.div`
+export const HeaderPc = styled.div`
+width: 100%;
+background-color: #702079;
 @media (min-width: 600px) {
   display:none;
 }
 `;
 
-export const Guilherme = styled.div`
+export const HeaderMobile = styled.div`
 display:none;
 @media (min-width: 600px) {
   display:block;
