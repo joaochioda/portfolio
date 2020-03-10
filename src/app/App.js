@@ -18,6 +18,7 @@ function App({ t }) {
 				</div>
 				<img src={logo} className="App-logo" alt="logo" />
 				<h1>{t('Welcome to React')}</h1>
+				<span>oi</span>
 			</header>
 		</div>
 	);
