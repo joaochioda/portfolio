@@ -12,12 +12,10 @@ export function Contact() {
 	const handleChange = event => {
 		event.persist();
 		setValues(values => ({ ...values, [event.target.name]: event.target.value }));
-
 	};
 
 	const sendEmail = () => {
 	};
-
 
 	return (<div>
 		<form className={classes.root} noValidate autoComplete="off">
@@ -49,13 +47,11 @@ export function Contact() {
 				onChange={handleChange}
 				variant="outlined"
 			/>
-
 		</form>
 		<div>
 			<Button variant="contained" color="primary" onClick={() => sendEmail()}>
 				{t('contact.send')}
 			</Button>
 		</div>
-
 	</div>);
 }

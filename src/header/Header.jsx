@@ -1,5 +1,5 @@
 import React from 'react';
-import { Div, Ul, Joao, Guilherme, Li, Nav } from '../components/HeaderCss';
+import { Div, Ul, HeaderPc, HeaderMobile, Li, Nav } from '../components/HeaderCss';
 import { useTranslation } from 'react-i18next';
 import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
@@ -16,12 +16,12 @@ export default function Header() {
 	const handleClose = () => {
 		setAnchorEl(null);
 	};
-
+	
 	return (
 		<div>
 
 			<Nav>
-				<Joao>
+				<HeaderPc>
 					<Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick} color="primary">
 						{t('header.menu')}
 					</Button>
@@ -35,8 +35,8 @@ export default function Header() {
 						<MenuItem onClick={handleClose}>{t('header.projects')}</MenuItem>
 						<MenuItem onClick={handleClose}>{t('header.contact')}</MenuItem>
 					</Menu>
-				</Joao>
-				<Guilherme>
+				</HeaderPc>
+				<HeaderMobile>
 					<Div>
 						<Ul>
 							<Li>{t('header.whoami')}</Li>
@@ -44,8 +44,7 @@ export default function Header() {
 							<Li>{t('header.contact')}</Li>
 						</Ul>
 					</Div>
-				</Guilherme>
-
+				</HeaderMobile>
 
 			</Nav>
 		</div>
