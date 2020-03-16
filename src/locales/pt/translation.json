@@ -1,3 +1,18 @@
 {
-    "Welcome to React": "Bem vindo a minha aplicação"
+  "title": {
+    "teste": "oi"
+  },
+  "header": {
+    "whoami": "Quem sou eu",
+    "projects": "Projetos",
+    "contact": "Contato",
+    "menu": "Menu"
+  },
+  "contact": {
+    "email": "Email",
+    "name": "Nome",
+    "subject": "Assunto",
+    "message": "Mensagem",
+    "send": "Enviar"
   }
+}
