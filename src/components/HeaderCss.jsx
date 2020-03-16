@@ -62,7 +62,6 @@ export const Li = styled.li`
     justify-content: center;
     position: relative;
     border-bottom: 2px solid #E67438;
-    content: "";
     transition: border-bottom 0.6s linear;
     &:hover {
         border-bottom: 10px solid #E67438;
