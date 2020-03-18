@@ -16,9 +16,9 @@ export default function Header() {
 	const handleClose = () => {
 		setAnchorEl(null);
 	};
+
 	return (
 		<div>
-
 			<Nav>
 				<HeaderPc>
 					<Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick} color="primary">
@@ -44,10 +44,7 @@ export default function Header() {
 						</Ul>
 					</Div>
 				</HeaderMobile>
-
-
 			</Nav>
 		</div>
-
 	);
 }
