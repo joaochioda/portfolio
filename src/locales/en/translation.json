@@ -13,6 +13,9 @@
     "name": "Name",
     "subject": "Subject",
     "message": "Message",
-    "send": "Send"
+    "send": "Send",
+    "sucess": "Sucess sending email !",
+    "error": "Error sending email !",
+    "required": "Required field"
   }
 }
