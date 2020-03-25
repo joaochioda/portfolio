@@ -96,7 +96,6 @@ export const Contact = () => {
 		}
 	};
 
-	console.log(values.email);
 	return (<div>
 		<form className={classes.root} noValidate autoComplete="off">
 			<TextField id="outlined-basic"
@@ -141,7 +140,7 @@ export const Contact = () => {
 			/>
 		</form>
 		<div>
-			<Button variant="contained" color="primary" onClick={() => validateInputs()} disabled={disabledButton}>
+			<Button id="count-up" variant="contained" color="primary" onClick={() => validateInputs()} disabled={disabledButton}>
 				{t('contact.send')}
 			</Button>
 		</div>
