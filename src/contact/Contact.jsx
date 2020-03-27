@@ -14,6 +14,7 @@ export const Contact = () => {
 	const [disabledButton, setDisabledButton] = React.useState(false);
 	const [openSucess, setOpenSucess] = React.useState(false);
 	const [openError, setOpenError] = React.useState(false);
+	const [test,setTest] = React.useState('');
 	const [valid, setValid] = React.useState({
 		email: Boolean,
 		name: Boolean,
@@ -26,31 +27,40 @@ export const Contact = () => {
 		setValues(values => ({ ...values, [event.target.name]: event.target.value }));
 	};
 
+	const handleTest = event => {
+		setTest(event.target.value);
+	};
+
 	const handleClose = () => {
 		setOpenError(false);
 		setOpenSucess(false);
 	};
 
 	const validateInputs = () => {
+		console.log('---------------');
+		if(test.length>0) {
+			console.log('iiiiiiiiiiiiii');
+		}
 		let email = false;
 		let name = false;
 		let subject = false;
 		let message = false;
 
-		if((values.email || []).length > 0) {
+		if ((values.email || []).length > 0) {
 			email = true;
 		}
-		if((values.name || []).length > 0) {
+		if ((values.name || []).length > 0) {
 			name = true;
-		} 
-		if((values.subject || []).length > 0) {
+		}
+		if ((values.subject || []).length > 0) {
 			subject = true;
 		}
-		if((values.message || []).length > 0) {
+		if ((values.message || []).length > 0) {
 			message = true;
 		}
 
-		setValid({email, name, subject, message});
+		
+		setValid({ email, name, subject, message });
 
 		if (email && name && subject && message) {
 			sendEmail();
@@ -83,7 +93,7 @@ export const Contact = () => {
 	const showError = (type) => {
 		const string = values[type];
 		const verified = valid[type];
-		if(!verified) {
+		if (!verified) {
 			return true;
 		}
 		else if (string === undefined) {
@@ -91,22 +101,23 @@ export const Contact = () => {
 		}
 		else if (verified) {
 			return false;
-		}else if (!verified && string.length > 0) {
+		} else if (!verified && string.length > 0) {
 			return false;
 		}
 	};
-
+	console.log(test);
 	return (<div>
 		<form className={classes.root} noValidate autoComplete="off">
-			<TextField id="outlined-basic"
+			<TextField id="contact-text-email"
+				data-testid="batata"
 				label={t('contact.email')}
 				variant="outlined"
 				name="email"
 				required
 				error={showError('email')}
 				helperText={showError('email') ? t('contact.required') : ''}
-				value={values.email}
-				onChange={handleChange} />
+				value={test}
+				onChange={handleTest} />
 			<TextField id="outlined-basic"
 				label={t('contact.name')}
 				variant="outlined"
@@ -116,7 +127,7 @@ export const Contact = () => {
 				required
 				value={values.name}
 				onChange={handleChange} />
-			<TextField id="outlined-basic"
+			<TextField id=""
 				label={t('contact.subject')}
 				variant="outlined"
 				name="subject"
@@ -126,7 +137,7 @@ export const Contact = () => {
 				value={values.subject}
 				onChange={handleChange} />
 			<TextField
-				id="filled-multiline-flexible"
+				id=""
 				label={t('contact.message')}
 				multiline
 				required
@@ -140,7 +151,7 @@ export const Contact = () => {
 			/>
 		</form>
 		<div>
-			<Button id="count-up" variant="contained" color="primary" onClick={() => validateInputs()} disabled={disabledButton}>
+			<Button id="contact-send" variant="contained" color="primary" onClick={() => validateInputs()} disabled={disabledButton}>
 				{t('contact.send')}
 			</Button>
 		</div>

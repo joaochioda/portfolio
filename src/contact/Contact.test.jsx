@@ -1,10 +1,7 @@
 import React from 'react';
-import { mount } from 'enzyme';
 import { Contact } from './Contact';
 import Enzyme from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
 
 Enzyme.configure({ adapter: new Adapter() });
 
@@ -23,10 +20,20 @@ describe('<Test Contact>', () => {
 		jest.clearAllMocks();
 	});
 
-	describe('See state', () => {
-		it('teste 1', () => {
-			wrapper.find('#count-up').props().onClick();
-			expect(setState).toHaveBeenCalledWith({'email': false, 'message': false, 'name': false, 'subject': false});
+	describe('Teste state', () => {
+
+		it('initial state all false', () => {
+			wrapper.find('#contact-send').props().onClick();
+			expect(setState).toHaveBeenCalledWith({ 'email': false, 'message': false, 'name': false, 'subject': false });
 		});
+
+		it('check if state change', () => {
+			wrapper.find('#contact-text-email').simulate('change', { target: { value: 'joao@dextra.com' } });
+			expect(setState).toHaveBeenCalledWith('joao@dextra.com');
+			wrapper.find('#contact-send').props().onClick();
+			wrapper.update();
+		});
+
+		//snapshot
 	});
 });
