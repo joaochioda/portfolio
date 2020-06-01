@@ -1,68 +1,57 @@
 import styled from 'styled-components';
 import Button from '@material-ui/core/Button';
 
-export const Div = styled.div`
-  max-width: 1111px;
-  height: 2em;
+export const Nav = styled.div`
+  background-color: white;
+  min-height: 7rem;
+  display: flex;
+  flex-direction: row;
+  font-size: 20px;
+  color: black;
+  position: fixed;
   width: 100%;
-  display:flex;
-  background-color: #702079;
+  top: 0
+
+`;
+
+export const Div30 = styled.div`
+  justify-content: space-between;
+  display: flex;
+  min-width: 320px;
+  width: 30%;
+  align-items: center;
+`;
+
+export const Hexagon = styled.div`
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+  background: url("https://i.imgur.com/waDgcnc.jpg") no-repeat;
+  background-size: cover;
+  margin: 10px auto;
+  height: 100px;
+  width: 100px;
+  stroke: teal;
+
+`;
+
+export const Div40 = styled.div`
+  width: 40%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
 `;
 
 export const But = styled(Button)`
   background: linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)
 `;
 
-export const HeaderPc = styled.div`
-  width: 100%;
-  background-color: #702079;
-  @media (min-width: 600px) {
-    display:none;
-  }
-`;
-
-export const HeaderMobile = styled.div`
-  display:none;
-  @media (min-width: 600px) {
-    display:block;
-  }
-`;
-
-export const Nav = styled.nav`
-  background-color:'white';
-  min-height: 5vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 20px;
-  font-size: calc(10px + 2vmin);
-  color: white;
-`;
-
-export const Teste = styled.li`
-  background-color: green;
-  flex-direction: column;
-`;
-
-export const Ul = styled.ul`
-  justify-content: space-between;
-  width: 100vw;
-  display: inherit;
-  margin: 0em;
-  padding: 0em;
-`;
-
-export const Li = styled.li`
-  list-style: none;
-  min-width: 200px;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
+export const Div30Justify = styled(Div30)`
   justify-content: center;
-  position: relative;
-  border-bottom: 2px solid #E67438;
-  transition: border-bottom 0.6s linear;
+`;
+
+export const Label = styled.span`
+  font-family: 'Mali', cursive;
+  cursor: pointer;
   &:hover {
-    border-bottom: 10px solid #E67438;
+    color: purple;
   }
 `;

@@ -1,49 +1,48 @@
 import React from 'react';
-import { Div, Ul, HeaderPc, HeaderMobile, Li, Nav } from '../components/HeaderCss';
+import { Nav, Label, Div40, Div30, Div30Justify } from '../components/HeaderCss';
 import { useTranslation } from 'react-i18next';
-import Button from '@material-ui/core/Button';
-import Menu from '@material-ui/core/Menu';
-import MenuItem from '@material-ui/core/MenuItem';
+import Brasil from '../resources/brasil.jpg';
+import Eua from '../resources/eua.jpg';
+import './index.css';
 
 export default function Header() {
+	const [flag, setFlag] = React.useState('Brasil');
 	const { t } = useTranslation();
-	const [anchorEl, setAnchorEl] = React.useState(null);
 
-	const handleClick = event => {
-		setAnchorEl(event.currentTarget);
+	const { i18n } = useTranslation();
+	const changeLanguage = (lng) => {
+		console.log(lng);
+		if(lng === 'pt') {
+			setFlag('Brasil');
+		} else {
+			setFlag('Eua');
+		}
+		i18n.changeLanguage(lng);
 	};
 
-	const handleClose = () => {
-		setAnchorEl(null);
-	};
-
+	const renderFlag = (flag === 'Brasil' ? <img src={Eua} width="36" height="24" onClick={() => changeLanguage('en')}/> : <img src={Brasil} width="36" height="24" onClick={() => changeLanguage('pt')}/>);
 	return (
 		<div>
 			<Nav>
-				<HeaderPc>
-					<Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick} color="primary">
-						{t('header.menu')}
-					</Button>
-					<Menu
-						id="simple-menu"
-						anchorEl={anchorEl}
-						keepMounted
-						open={Boolean(anchorEl)}
-						onClose={handleClose}
-					><MenuItem onClick={handleClose}>{t('header.whoami')}</MenuItem>
-						<MenuItem onClick={handleClose}>{t('header.projects')}</MenuItem>
-						<MenuItem onClick={handleClose}>{t('header.contact')}</MenuItem>
-					</Menu>
-				</HeaderPc>
-				<HeaderMobile>
-					<Div>
-						<Ul>
-							<Li>{t('header.whoami')}</Li>
-							<Li>{t('header.projects')}</Li>
-							<Li>{t('header.contact')}</Li>
-						</Ul>
-					</Div>
-				</HeaderMobile>
+				<Div30>
+					<Label>
+						{t('header.whoami')}
+					</Label>
+					<Label>
+						{t('header.projects')}
+					</Label>
+					<Label>
+						{t('header.contact')}
+					</Label>
+				</Div30>
+				<Div40>
+					<div className="hexagon image"></div>
+				</Div40>
+				<Div30Justify>
+					<Label>
+						{renderFlag}
+					</Label>
+				</Div30Justify>
 			</Nav>
 		</div>
 	);

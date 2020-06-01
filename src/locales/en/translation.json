@@ -8,6 +8,9 @@
     "contact": "Contact",
     "menu": "Menu"
   },
+  "main": {
+    "scroll": "Scroll to meet me"
+  },
   "contact": {
     "email": "Email",
     "name": "Name",

@@ -14,7 +14,6 @@ export const Contact = () => {
 	const [disabledButton, setDisabledButton] = React.useState(false);
 	const [openSucess, setOpenSucess] = React.useState(false);
 	const [openError, setOpenError] = React.useState(false);
-	const [test,setTest] = React.useState('');
 	const [valid, setValid] = React.useState({
 		email: Boolean,
 		name: Boolean,
@@ -27,20 +26,12 @@ export const Contact = () => {
 		setValues(values => ({ ...values, [event.target.name]: event.target.value }));
 	};
 
-	const handleTest = event => {
-		setTest(event.target.value);
-	};
-
 	const handleClose = () => {
 		setOpenError(false);
 		setOpenSucess(false);
 	};
 
 	const validateInputs = () => {
-		console.log('---------------');
-		if(test.length>0) {
-			console.log('iiiiiiiiiiiiii');
-		}
 		let email = false;
 		let name = false;
 		let subject = false;
@@ -59,7 +50,6 @@ export const Contact = () => {
 			message = true;
 		}
 
-		
 		setValid({ email, name, subject, message });
 
 		if (email && name && subject && message) {
@@ -82,12 +72,11 @@ export const Contact = () => {
 			setOpenSucess(true);
 			setDisabledButton(false);
 
-		})
-			.catch(error => {
-				setDisabledButton(false);
-				setOpenError(true);
-				console.log(error);
-			});
+		}).catch(error => {
+			setDisabledButton(false);
+			setOpenError(true);
+			console.log(error);
+		});
 	};
 
 	const showError = (type) => {
@@ -105,7 +94,6 @@ export const Contact = () => {
 			return false;
 		}
 	};
-	console.log(test);
 	return (<div>
 		<form className={classes.root} noValidate autoComplete="off">
 			<TextField id="contact-text-email"
@@ -116,8 +104,8 @@ export const Contact = () => {
 				required
 				error={showError('email')}
 				helperText={showError('email') ? t('contact.required') : ''}
-				value={test}
-				onChange={handleTest} />
+				value={values.email}
+				onChange={handleChange} />
 			<TextField id="outlined-basic"
 				label={t('contact.name')}
 				variant="outlined"
