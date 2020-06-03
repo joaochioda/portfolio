@@ -10,7 +10,8 @@ export const Nav = styled.div`
   color: black;
   position: fixed;
   width: 100%;
-  top: 0
+  top: 0;
+  z-index: 10;
 
 `;
 
@@ -52,6 +53,6 @@ export const Label = styled.span`
   font-family: 'Mali', cursive;
   cursor: pointer;
   &:hover {
-    color: purple;
+    color: #800080;
   }
 `;
