@@ -1,11 +1,11 @@
-import styled from 'styled-components';
+import styled, { keyframes }from 'styled-components';
 
 export const Div = styled.div`
     margin: 5px;
 `;
 
 export const TopText = styled.div`
-    padding-top: 150px;
+    padding-top: 250px;
     color: red;
     min-height: 100px;
     text-align: center;
@@ -15,7 +15,7 @@ export const TopText = styled.div`
 `;
 
 export const Card = styled.div`
-  padding-top: 200px;
+  padding-top: 150px;
   padding-left: 100px;
   display: flex;
   width: 700px;

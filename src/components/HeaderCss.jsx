@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes }from 'styled-components';
 import Button from '@material-ui/core/Button';
 
 export const Nav = styled.div`
@@ -49,10 +49,27 @@ export const Div30Justify = styled(Div30)`
   justify-content: center;
 `;
 
+const rotate = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+`;
+
 export const Label = styled.span`
   font-family: 'Mali', cursive;
   cursor: pointer;
+  
   &:hover {
     color: #800080;
   }
+`;
+
+export const Flag = styled(Label)`
+&:hover {
+  animation: ${rotate} 2s linear infinite;
+}
 `;

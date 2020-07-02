@@ -1,5 +1,5 @@
 import React from 'react';
-import { Nav, Label, Div40, Div30, Div30Justify } from '../components/HeaderCss';
+import { Nav, Label, Div40, Div30, Div30Justify, Flag } from '../components/HeaderCss';
 import { useTranslation } from 'react-i18next';
 import Brasil from '../resources/brasil.jpg';
 import Eua from '../resources/eua.jpg';
@@ -39,9 +39,9 @@ export default function Header() {
 					<div className="hexagon image"></div>
 				</Div40>
 				<Div30Justify>
-					<Label>
+					<Flag>
 						{renderFlag}
-					</Label>
+					</Flag>
 				</Div30Justify>
 			</Nav>
 		</div>
