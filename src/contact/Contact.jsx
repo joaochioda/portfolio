@@ -94,7 +94,7 @@ export const Contact = () => {
 			return false;
 		}
 	};
-	return (<div>
+	return (<div id="contact">
 		<form className={classes.root} noValidate autoComplete="off">
 			<TextField id="contact-text-email"
 				data-testid="batata"

@@ -2,24 +2,34 @@
 import React from 'react';
 import { Div, TopText, Card, Title, Description, Content, Image, RightCard } from '../components/MainCss';
 import { Contact } from '../contact/Contact.jsx';
+import { Projects } from '../projects/Projects.jsx';
 import { useTranslation } from 'react-i18next';
 import Graduate from '../resources/graduate.png';
 import Boss from '../resources/boss.svg';
 import Controller from '../resources/controller.png';
 import '../components/main.css';
-import debounce from 'lodash.debounce';
 
 export default function BackGround() {
 
 	const { t } = useTranslation();
 
+	function teste () {
+		$('span a').click(function(e){
+			e.preventDefault();
+			const id = $(this).attr('href');
+			let targetOffSet = $(id).offset().top - 150;
+			console.log(targetOffSet);
+			$('html, body').animate({
+				scrollTop: targetOffSet
+			}, 2000);
+		});
+	}
 
 	function animeScroll() {
 		let $leftCard = $('.anime-left');
 		let $rightCard = $('.anime-right');
 		let animationClass = 'anime-start';
 		let offset = $(window).height() * 3/6;
-		console.log(offset);
 		let documentTop = $(document).scrollTop();
 		$leftCard.each(function () {
 			let itemTop = $(this).offset().top;
@@ -44,8 +54,12 @@ export default function BackGround() {
 		animeScroll();
 	});
 
+	$( document ).ready(function() {
+		teste();
+	});
+
 	return (
-		<div>
+		<div id="whoiam">
 
 			<TopText>
 				{t('main.scroll')}
@@ -97,7 +111,7 @@ export default function BackGround() {
 			</Card>
 
 			<Div>
-				dasdsadas dasdsadas dasdsadas dasdsadas dasdsadas dasdsadas dasdsadas dasdsadas dasdsadas dasdsadas dasdsadas dasdsadas dasdsadas dasdsadas dasdsadas dasdsadas dasdsadas dasdsadas dasdsadas dasdsadas dasdsadas dasdsadas dasdsadas dasdsadas dasdsadas dasdsadas dasdsadas dasdsadas dasdsadas dasdsadas dasdsadas dasdsadas dasdsadas dasdsadas dasdsadas
+				<Projects />
 			</Div>
 			<Div>
 				<Contact />

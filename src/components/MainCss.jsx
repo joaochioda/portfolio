@@ -6,8 +6,12 @@ export const Div = styled.div`
 
 export const TopText = styled.div`
     padding-top: 250px;
+    padding-bottom: 100px;
     color: red;
     min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
     font-family: 'Press Start 2P', cursive;
     background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);   -webkit-background-clip: text;
@@ -15,8 +19,8 @@ export const TopText = styled.div`
 `;
 
 export const Card = styled.div`
-  padding-top: 150px;
   padding-left: 100px;
+  padding-bottom: 50px;
   display: flex;
   width: 700px;
   max-height: 400px;

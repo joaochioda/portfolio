@@ -51,11 +51,11 @@ export const Div30Justify = styled(Div30)`
 
 const rotate = keyframes`
   from {
-    transform: rotate(0deg);
+    transform: scale(1.0);
   }
 
   to {
-    transform: rotate(360deg);
+    transform: scale(1.15);
   }
 `;
 
@@ -70,6 +70,6 @@ export const Label = styled.span`
 
 export const Flag = styled(Label)`
 &:hover {
-  animation: ${rotate} 2s linear infinite;
+  animation: ${rotate} 0.5s linear forwards;
 }
 `;

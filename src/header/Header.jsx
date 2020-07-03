@@ -26,13 +26,13 @@ export default function Header() {
 			<Nav>
 				<Div30>
 					<Label>
-						{t('header.whoami')}
+						<a style={{textDecoration: 'none'}} href="#whoiam">{t('header.whoami')}</a>
 					</Label>
 					<Label>
-						{t('header.projects')}
+						<a style={{textDecoration: 'none'}} href="#projects">{t('header.projects')}</a>
 					</Label>
 					<Label>
-						{t('header.contact')}
+						<a style={{textDecoration: 'none'}}  href="#contact">{t('header.contact')}</a>
 					</Label>
 				</Div30>
 				<Div40>
