@@ -1,0 +1,7 @@
+.teste .carousel.carousel-slider .control-arrow {
+    background: gray;
+    height: 50px;
+    width: 50px;
+    margin: auto;
+    border-radius: 50%;
+}

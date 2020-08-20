@@ -3,6 +3,7 @@ import { Nav, Label, Div40, Div30, Div30Justify, Flag } from '../components/Head
 import { useTranslation } from 'react-i18next';
 import Brasil from '../resources/brasil.jpg';
 import Eua from '../resources/eua.jpg';
+import { Link, DirectLink, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
 import './index.css';
 
 export default function Header() {
@@ -19,20 +20,22 @@ export default function Header() {
 		}
 		i18n.changeLanguage(lng);
 	};
+	
 
 	const renderFlag = (flag === 'Brasil' ? <img src={Eua} width="36" height="24" onClick={() => changeLanguage('en')}/> : <img src={Brasil} width="36" height="24" onClick={() => changeLanguage('pt')}/>);
 	return (
 		<div>
+			
 			<Nav>
 				<Div30>
 					<Label>
-						<a style={{textDecoration: 'none'}} href="#whoiam">{t('header.whoami')}</a>
+						<Link style={{textDecoration: 'none'}} activeClass="active" to="whoiam" spy={true} smooth={true} duration={1000} >{t('header.whoami')}</Link>
 					</Label>
 					<Label>
-						<a style={{textDecoration: 'none'}} href="#projects">{t('header.projects')}</a>
+						<Link style={{textDecoration: 'none'}} activeClass="active" to="projects" spy={true} smooth={true} duration={1000} >{t('header.projects')}</Link>
 					</Label>
 					<Label>
-						<a style={{textDecoration: 'none'}}  href="#contact">{t('header.contact')}</a>
+						<Link style={{textDecoration: 'none'}} activeClass="active" to="contact" spy={true} smooth={true} duration={1000} >{t('header.contact')}</Link>
 					</Label>
 				</Div30>
 				<Div40>

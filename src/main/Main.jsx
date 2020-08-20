@@ -1,6 +1,7 @@
 /* eslint-disable no-undef */
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Div, TopText, Card, Title, Description, Content, Image, RightCard } from '../components/MainCss';
+import ReactDOM from 'react-dom';
 import { Contact } from '../contact/Contact.jsx';
 import { Projects } from '../projects/Projects.jsx';
 import { useTranslation } from 'react-i18next';
@@ -12,24 +13,47 @@ import '../components/main.css';
 export default function BackGround() {
 
 	const { t } = useTranslation();
+	const offset = window.innerWidth* 3 / 8;
+	const [scrollPosition, setSrollPosition] = useState(0);
 
-	function teste () {
-		$('span a').click(function(e){
-			e.preventDefault();
-			const id = $(this).attr('href');
-			let targetOffSet = $(id).offset().top - 150;
-			console.log(targetOffSet);
-			$('html, body').animate({
-				scrollTop: targetOffSet
-			}, 2000);
-		});
+	const handleScroll = () => {
+		const position = window.pageYOffset;
+		setSrollPosition(position);
+	};
+	const leftCards = document.getElementsByClassName('anime-left');
+	const rightCards = document.getElementsByClassName('anime-right');
+
+	useEffect(() => {
+		window.addEventListener('scroll', handleScroll, { passive: true });
+
+		return () => {
+			window.removeEventListener('scroll', handleScroll);
+		};
+	}, []);
+
+	for (let item of leftCards) {
+		if (scrollPosition > item.offsetTop - offset && item.className.indexOf(' anime-start') === -1) {
+			const a = item.className + ' anime-start';
+			item.className = a;
+		} else if (item.className.indexOf(' anime-start') !== -1 && scrollPosition < item.offsetTop - offset){
+			item.className = item.className.substring(0, item.className.indexOf(' anime-start'));
+		}
+	}
+
+	for (let item of rightCards) {
+		if (scrollPosition > item.offsetTop - offset && item.className.indexOf(' anime-start') === -1) {
+			const a = item.className + ' anime-start';
+			item.className = a;
+		} else if (item.className.indexOf(' anime-start') !== -1 && scrollPosition < item.offsetTop - offset){
+			item.className = item.className.substring(0, item.className.indexOf(' anime-start'));
+		}
 	}
 
 	function animeScroll() {
 		let $leftCard = $('.anime-left');
 		let $rightCard = $('.anime-right');
 		let animationClass = 'anime-start';
-		let offset = $(window).height() * 3/6;
+		let offset = $(window).height() * 3 / 6;
 		let documentTop = $(document).scrollTop();
 		$leftCard.each(function () {
 			let itemTop = $(this).offset().top;
@@ -50,13 +74,6 @@ export default function BackGround() {
 		});
 	}
 
-	$(document).scroll(function () {
-		animeScroll();
-	});
-
-	$( document ).ready(function() {
-		teste();
-	});
 
 	return (
 		<div id="whoiam">

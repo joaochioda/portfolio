@@ -30,7 +30,7 @@ export const RightCard = styled(Card)`
   @media (max-width: 768px) {
     padding-left: 230px;
   }
-  padding-left: 430px;
+  padding-left: 600px;
 `;
 
 export const Content = styled.div`
