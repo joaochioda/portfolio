@@ -1,5 +1,5 @@
 import React from 'react';
-import { Contact } from './Contact';
+import { Contact } from '../Contact';
 import Enzyme from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import { CarouselDiv } from '../components/ProjectsCss';
+import { CarouselDiv } from './ProjectsCss';
 
 import './index.css';
 const Carousel = require('react-responsive-carousel').Carousel;

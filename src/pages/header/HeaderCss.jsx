@@ -6,6 +6,7 @@ export const Nav = styled.div`
   min-height: 7rem;
   display: flex;
   flex-direction: row;
+  margin-left: -6px;
   font-size: 20px;
   color: black;
   position: fixed;

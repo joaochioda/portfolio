@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import TextField from '@material-ui/core/TextField';
 import Snackbar from '@material-ui/core/Snackbar';
-import { useStyles } from '../components/ContactCss';
+import { useStyles } from './ContactCss';
 import { useTranslation } from 'react-i18next';
 import { Alert } from '@material-ui/lab';
 import Button from '@material-ui/core/Button';

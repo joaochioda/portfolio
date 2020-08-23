@@ -1,19 +1,21 @@
 /* eslint-disable no-undef */
 import React, { useState, useEffect } from 'react';
-import { Div, TopText, Card, Title, Description, Content, Image, RightCard } from '../components/MainCss';
+import { Div, TopText, Card, Title, Description, Content, Image, RightCard } from './MainCss';
 import ReactDOM from 'react-dom';
 import { Contact } from '../contact/Contact.jsx';
 import { Projects } from '../projects/Projects.jsx';
 import { useTranslation } from 'react-i18next';
-import Graduate from '../resources/graduate.png';
-import Boss from '../resources/boss.svg';
-import Controller from '../resources/controller.png';
-import '../components/main.css';
+import Graduate from '../../resources/graduate.png';
+import Boss from '../../resources/boss.svg';
+import Controller from '../../resources/controller.png';
+import '../../components/main.css';
 
 export default function BackGround() {
 
 	const { t } = useTranslation();
 	const offset = window.innerWidth* 3 / 8;
+	console.log(window.innerHeight);
+	console.log(window.innerWidth);
 	const [scrollPosition, setSrollPosition] = useState(0);
 
 	const handleScroll = () => {
@@ -49,32 +51,6 @@ export default function BackGround() {
 		}
 	}
 
-	function animeScroll() {
-		let $leftCard = $('.anime-left');
-		let $rightCard = $('.anime-right');
-		let animationClass = 'anime-start';
-		let offset = $(window).height() * 3 / 6;
-		let documentTop = $(document).scrollTop();
-		$leftCard.each(function () {
-			let itemTop = $(this).offset().top;
-			if (documentTop > itemTop - offset) {
-				$(this).addClass(animationClass);
-			} else {
-				$(this).removeClass(animationClass);
-			}
-		});
-
-		$rightCard.each(function () {
-			let itemTop = $(this).offset().top;
-			if (documentTop > itemTop - offset) {
-				$(this).addClass(animationClass);
-			} else {
-				$(this).removeClass(animationClass);
-			}
-		});
-	}
-
-
 	return (
 		<div id="whoiam">
 
@@ -82,7 +58,7 @@ export default function BackGround() {
 				{t('main.scroll')}
 			</TopText>
 
-			<Card className="anime-left">
+			<Card width={window.innerWidth} className="anime-left">
 				<Content>
 					<Title>
 						Formação
@@ -97,7 +73,7 @@ export default function BackGround() {
 				</Image>
 			</Card>
 
-			<RightCard className="anime-right">
+			<RightCard width={window.innerWidth} className="anime-right">
 				<Image>
 					<img src={Boss} width="250" height="200" />
 				</Image>
@@ -112,7 +88,7 @@ export default function BackGround() {
 				</Content>
 			</RightCard>
 
-			<Card className="anime-left">
+			<Card width={window.innerWidth} className="anime-left">
 				<Content>
 					<Title>
 						Hobbie

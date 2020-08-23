@@ -1,8 +1,8 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import './App.css';
-import Header from '../header/Header';
-import Main from '../main/Main';
+import Header from '../../src/pages/header/Header';
+import Main from '../../src/pages/main/Main';
 
 export default function App() {
 	const { i18n } = useTranslation();

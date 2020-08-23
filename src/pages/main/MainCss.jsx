@@ -5,7 +5,7 @@ export const Div = styled.div`
 `;
 
 export const TopText = styled.div`
-    padding-top: 250px;
+    padding-top: 150px;
     padding-bottom: 100px;
     color: red;
     min-height: 100px;
@@ -19,18 +19,18 @@ export const TopText = styled.div`
 `;
 
 export const Card = styled.div`
-  padding-left: 100px;
+  padding-left: ${props => props.width/2  - props.width/4}px;
   padding-bottom: 50px;
   display: flex;
   width: 700px;
   max-height: 400px;
 `;
 
-export const RightCard = styled(Card)`
+export const RightCard =  styled(Card)`
   @media (max-width: 768px) {
     padding-left: 230px;
   }
-  padding-left: 600px;
+  padding-left: ${props => props.width/2 - props.width/10}px
 `;
 
 export const Content = styled.div`

@@ -1,8 +1,8 @@
 import React from 'react';
-import { Nav, Label, Div40, Div30, Div30Justify, Flag } from '../components/HeaderCss';
+import { Nav, Label, Div40, Div30, Div30Justify, Flag } from './HeaderCss';
 import { useTranslation } from 'react-i18next';
-import Brasil from '../resources/brasil.jpg';
-import Eua from '../resources/eua.jpg';
+import Brasil from '../../resources/brasil.jpg';
+import Eua from '../../resources/eua.jpg';
 import { Link, DirectLink, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
 import './index.css';
 
