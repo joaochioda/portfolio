@@ -1,7 +1,6 @@
 /* eslint-disable no-undef */
 import React, { useState, useEffect } from 'react';
 import { Div, TopText, Card, Title, Description, Content, Image, RightCard } from './MainCss';
-import ReactDOM from 'react-dom';
 import { Contact } from '../contact/Contact.jsx';
 import { Projects } from '../projects/Projects.jsx';
 import { useTranslation } from 'react-i18next';
@@ -14,13 +13,15 @@ export default function BackGround() {
 
 	const { t } = useTranslation();
 	const offset = window.innerWidth* 3 / 8;
-	console.log(window.innerHeight);
-	console.log(window.innerWidth);
 	const [scrollPosition, setSrollPosition] = useState(0);
 
 	const handleScroll = () => {
-		const position = window.pageYOffset;
-		setSrollPosition(position);
+		console.log(window.innerWidth);
+		console.log(window.innerHeight);
+		if (window.innerWidth > 1000) {
+			const position = window.pageYOffset;
+			setSrollPosition(position);
+		}
 	};
 	const leftCards = document.getElementsByClassName('anime-left');
 	const rightCards = document.getElementsByClassName('anime-right');
@@ -69,13 +70,13 @@ export default function BackGround() {
 
 				</Content>
 				<Image>
-					<img src={Graduate} width="250" height="200" />
+					<img src={Graduate} width="250" height="200" alt=""/>
 				</Image>
 			</Card>
 
 			<RightCard width={window.innerWidth} className="anime-right">
 				<Image>
-					<img src={Boss} width="250" height="200" />
+					<img src={Boss} width="250" height="200" alt=""/>
 				</Image>
 				<Content>
 					<Title>
@@ -99,7 +100,7 @@ export default function BackGround() {
 
 				</Content>
 				<Image>
-					<img src={Controller} width="250" height="200" />
+					<img src={Controller} width="250" height="200" alt=""/>
 				</Image>
 			</Card>
 

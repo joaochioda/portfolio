@@ -3,7 +3,6 @@ import Button from '@material-ui/core/Button';
 
 export const Nav = styled.div`
   background-color: white;
-  min-height: 7rem;
   display: flex;
   flex-direction: row;
   margin-left: -6px;
@@ -13,33 +12,33 @@ export const Nav = styled.div`
   width: 100%;
   top: 0;
   z-index: 10;
+`;
 
+export const DivIconButton = styled.div`
+  display:flex;
+  width: 100px;
 `;
 
 export const Div30 = styled.div`
-  justify-content: space-between;
-  display: flex;
-  min-width: 320px;
-  width: 30%;
-  align-items: center;
-`;
 
-export const Hexagon = styled.div`
-  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
-  background: url("https://i.imgur.com/waDgcnc.jpg") no-repeat;
-  background-size: cover;
-  margin: 10px auto;
-  height: 100px;
-  width: 100px;
-  stroke: teal;
-
+  @media (min-width: 768px) {
+    justify-content: space-between;
+    display: flex;
+    min-width: 320px;
+    width: 30%;
+    align-items: center;
+  }
+  
 `;
 
 export const Div40 = styled.div`
+@media (min-width: 768px) {
   width: 40%;
   align-items: center;
   display: flex;
   justify-content: center;
+}
+  margin: auto;
 `;
 
 export const But = styled(Button)`
@@ -47,7 +46,12 @@ export const But = styled(Button)`
 `;
 
 export const Div30Justify = styled(Div30)`
-  justify-content: center;
+@media (max-width: 768px) {
+  display: flex;
+  align-items: center;
+  width: 100px
+}
+  justify-content: center !important;
 `;
 
 const rotate = keyframes`
@@ -63,7 +67,6 @@ const rotate = keyframes`
 export const Label = styled.span`
   font-family: 'Mali', cursive;
   cursor: pointer;
-  
   &:hover {
     color: #800080;
   }
