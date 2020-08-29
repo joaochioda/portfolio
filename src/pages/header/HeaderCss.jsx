@@ -12,6 +12,7 @@ export const Nav = styled.div`
   width: 100%;
   top: 0;
   z-index: 10;
+  transition: top 0.4s
 `;
 
 export const DivIconButton = styled.div`
