@@ -10,7 +10,9 @@ import { useStyles } from './ContactCss';
 export const Contact = () => {
   const { t } = useTranslation();
   const classes = useStyles();
-  const [values, setValues] = React.useState('');
+  const [values, setValues] = React.useState({
+    name: '', subject: '', email: '', message: '',
+  });
   const [disabledButton, setDisabledButton] = React.useState(false);
   const [openSucess, setOpenSucess] = React.useState(false);
   const [openError, setOpenError] = React.useState(false);
@@ -21,9 +23,8 @@ export const Contact = () => {
     message: Boolean,
   });
 
-  const handleChange = (event) => {
-    event.persist();
-    setValues((values) => ({ ...values, [event.target.name]: event.target.value }));
+  const handleChange = (nameField, valueField) => {
+    setValues((values) => ({ ...values, [nameField]: valueField }));
   };
 
   const handleClose = () => {
@@ -109,7 +110,7 @@ export const Contact = () => {
           error={showError('email')}
           helperText={showError('email') ? t('contact.required') : ''}
           value={values.email}
-          onChange={handleChange}
+          onChange={(event) => handleChange(event.target.name, event.target.value)}
         />
         <TextField
           id="outlined-basic"
@@ -120,7 +121,7 @@ export const Contact = () => {
           helperText={showError('name') ? t('contact.required') : ''}
           required
           value={values.name}
-          onChange={handleChange}
+          onChange={(event) => handleChange(event.target.name, event.target.value)}
         />
         <TextField
           id=""
@@ -131,7 +132,7 @@ export const Contact = () => {
           helperText={showError('subject') ? t('contact.required') : ''}
           required
           value={values.subject}
-          onChange={handleChange}
+          onChange={(event) => handleChange(event.target.name, event.target.value)}
         />
         <TextField
           id=""
@@ -143,7 +144,7 @@ export const Contact = () => {
           rowsMax="4"
           name="message"
           value={values.message}
-          onChange={handleChange}
+          onChange={(event) => handleChange(event.target.name, event.target.value)}
           variant="outlined"
         />
       </form>
