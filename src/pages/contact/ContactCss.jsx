@@ -5,6 +5,7 @@ export const useStyles = makeStyles(theme => ({
 		'& .MuiTextField-root': {
 			margin: theme.spacing(1),
 			width: 200,
+			background: 'white'
 		},
 	},
 }));

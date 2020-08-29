@@ -1,25 +1,13 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
 import './App.css';
-import Header from '../header/Header';
-import Main from '../main/Main';
+import Header from '../pages/header/Header';
+import Main from '../pages/main/Main';
 
 export default function App() {
-	const { i18n } = useTranslation();
-	const changeLanguage = (lng) => {
-		i18n.changeLanguage(lng);
-	};
-
-	return (
-		<div className="App">
-			<Header />
-			<div>
-				<button onClick={() => changeLanguage('pt')}>pt</button>
-				<button onClick={() => changeLanguage('en')}>en</button>
-			</div>
-
-			<Main/>
-		</div>
-	);
+  return (
+    <div className="App">
+      <Header />
+      <Main />
+    </div>
+  );
 }
-

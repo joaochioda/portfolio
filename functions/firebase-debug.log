@@ -1,0 +1,45 @@
+[debug] [2020-03-18T20:35:50.845Z] ----------------------------------------------------------------------
+[debug] [2020-03-18T20:35:50.847Z] Command:       /usr/bin/node /usr/local/bin/firebase functions:shell
+[debug] [2020-03-18T20:35:50.847Z] CLI Version:   7.14.0
+[debug] [2020-03-18T20:35:50.847Z] Platform:      linux
+[debug] [2020-03-18T20:35:50.847Z] Node Version:  v11.15.0
+[debug] [2020-03-18T20:35:50.847Z] Time:          Wed Mar 18 2020 17:35:50 GMT-0300 (GMT-03:00)
+[debug] [2020-03-18T20:35:50.847Z] ----------------------------------------------------------------------
+[debug] [2020-03-18T20:35:50.847Z] 
+[debug] [2020-03-18T20:35:50.854Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-03-18T20:35:50.854Z] > authorizing via signed-in user
+[debug] [2020-03-18T20:35:50.854Z] [iam] checking project portfolio-joao for permissions ["firebase.projects.get"]
+[debug] [2020-03-18T20:35:50.855Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2020-03-18T20:35:50.855Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2020-03-18T20:35:51.224Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-18T20:35:51.233Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/portfolio-joao:testIamPermissions  
+
+[debug] [2020-03-18T20:35:52.305Z] <<< HTTP RESPONSE 200
+[warn] ⚠  Your requested "node" version "8" doesn't match your global version "11"
+[info] ✔  functions: functions emulator started at http://localhost:5000
+[debug] [2020-03-18T20:35:52.320Z] [functions] Watching "/home/joao.chioda/Documentos/pessoais/portfolio/functions" for Cloud Functions...
+[debug] [2020-03-18T20:35:52.328Z] DEBUG: [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-03-18T20:35:52.329Z] DEBUG: [worker-pool] Adding worker with key ~diagnostic~, total=1
+[debug] [2020-03-18T20:35:52.329Z] DEBUG: [worker-pool] submitWork(triggerId=)
+[debug] [2020-03-18T20:35:52.329Z] DEBUG: [worker-~diagnostic~-34b784c5-d1fe-485f-bf6d-0787bb7fe434]: Assigning socketPath: /tmp/fire_emu_9231.sock
+[debug] [2020-03-18T20:35:52.329Z] DEBUG: [worker-~diagnostic~-34b784c5-d1fe-485f-bf6d-0787bb7fe434]: BUSY
+[debug] [2020-03-18T20:35:52.505Z] DEBUG: [runtime-status] [9231] Functions runtime initialized. {"cwd":"/home/joao.chioda/Documentos/pessoais/portfolio/functions","node_version":"11.15.0"}
+[debug] [2020-03-18T20:35:52.506Z] DEBUG: [runtime-status] [9231] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-03-18T20:35:52.507Z] DEBUG: [runtime-status] [9231] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.2","resolution":"/home/joao.chioda/Documentos/pessoais/portfolio/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-03-18T20:35:52.508Z] DEBUG: [runtime-status] [9231] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/joao.chioda/Documentos/pessoais/portfolio/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-03-18T20:35:52.509Z] DEBUG: [runtime-status] [9231] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/home/joao.chioda/Documentos/pessoais/portfolio/functions/node_modules/firebase-functions/lib/index.js"}
+[warn] ⚠  TypeError: Cannot read property 'pass' of undefined
+    at Object.<anonymous> (/home/joao.chioda/Documentos/pessoais/portfolio/functions/index.js:11:32)
+    at Module._compile (internal/modules/cjs/loader.js:816:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:827:10)
+    at Module.load (internal/modules/cjs/loader.js:685:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:620:12)
+    at Module.require (internal/modules/cjs/loader.js:723:19)
+    at require (internal/modules/cjs/helpers.js:14:16)
+    at /usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:719:33
+    at Generator.next (<anonymous>)
+    at fulfilled (/usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:5:58)
+[warn] ⚠  We were unable to load your functions code. (see above)
+[debug] [2020-03-18T20:35:52.592Z] DEBUG: [worker-~diagnostic~-34b784c5-d1fe-485f-bf6d-0787bb7fe434]: exited
+[debug] [2020-03-18T20:35:52.593Z] DEBUG: [worker-~diagnostic~-34b784c5-d1fe-485f-bf6d-0787bb7fe434]: FINISHED
