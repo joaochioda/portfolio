@@ -22,18 +22,18 @@ export const TopText = styled.div`
 `;
 
 export const Card = styled.div`
-  padding-left: ${props => props.width/2  - props.width/4}px;
+  padding-left: ${(props) => props.width / 2 - props.width / 4}px;
   padding-bottom: 50px;
   display: flex;
   width: 700px;
   max-height: 400px;
 `;
 
-export const RightCard =  styled(Card)`
+export const RightCard = styled(Card)`
   @media (max-width: 768px) {
     padding-left: 230px;
   }
-  padding-left: ${props => props.width/2 - props.width/10}px
+  padding-left: ${(props) => props.width / 2 - props.width / 10}px
 `;
 
 export const Content = styled.div`

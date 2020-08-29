@@ -2,10 +2,10 @@ import styled, { keyframes } from 'styled-components';
 import Button from '@material-ui/core/Button';
 
 export const Nav = styled.div`
-  background-color: white;
+  background-color: #800080;
   display: flex;
   flex-direction: row;
-  margin-left: -6px;
+  margin-left: -8px;
   font-size: 20px;
   color: black;
   position: fixed;
@@ -67,9 +67,10 @@ const rotate = keyframes`
 
 export const Label = styled.span`
   font-family: 'Mali', cursive;
+  color: white;
   cursor: pointer;
   &:hover {
-    color: #800080;
+    color: green;
   }
 `;
 
