@@ -33,7 +33,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint --ext=js --max-warnings=0 .",
-    "lint:fix": "eslint --fix --ext=js --max-warnings=0 ."
+    "lint:fix": "eslint --fix"
   },
   "eslintConfig": {
     "extends": "react-app"
