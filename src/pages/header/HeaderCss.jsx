@@ -2,7 +2,7 @@ import styled, { keyframes } from 'styled-components';
 import Button from '@material-ui/core/Button';
 
 export const Nav = styled.div`
-  background-color: #800080;
+  background-color: #001f3f;
   display: flex;
   flex-direction: row;
   margin-left: -8px;
