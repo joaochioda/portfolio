@@ -1,4 +1,5 @@
 import styled, { keyframes } from 'styled-components';
+import ListItem from '@material-ui/core/ListItem';
 import Button from '@material-ui/core/Button';
 
 export const Nav = styled.div`
@@ -40,6 +41,10 @@ export const Div40 = styled.div`
   justify-content: center;
 }
   margin: auto;
+`;
+
+export const ListItemCustom = styled(ListItem)`
+  padding-top: 32px;
 `;
 
 export const But = styled(Button)`

@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/accessible-emoji */
 /* eslint-disable no-undef */
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -17,10 +18,12 @@ export default function BackGround() {
   const [scrollPosition, setSrollPosition] = useState(0);
 
   const handleScroll = () => {
-    if (window.innerWidth > 1000) {
-      const position = window.pageYOffset;
-      setSrollPosition(position);
-    }
+    // console.log(window.innerWidth) mostrar o tamanho da tela
+    console.log(window.innerWidth);
+    // if (window.innerWidth > 1000) {
+    const position = window.pageYOffset;
+    setSrollPosition(position);
+    // }
   };
   const leftCards = document.getElementsByClassName('anime-left');
   const rightCards = document.getElementsByClassName('anime-right');
@@ -59,28 +62,30 @@ export default function BackGround() {
       </TopText>
 
       <Card width={window.innerWidth} className="anime-left">
+        <Title>
+          Formação
+        </Title>
         <Content>
-          <Title>
-            Formação
-          </Title>
+          <Image>
+            <img src={Graduate} width="250" height="200" alt="" />
+          </Image>
           <Description>
             Formado em 2019 na faculdade de Campinas (Facamp), no curso de engenharia da Computação
           </Description>
 
         </Content>
-        <Image>
-          <img src={Graduate} width="250" height="200" alt="" />
-        </Image>
+
       </Card>
 
       <RightCard width={window.innerWidth} className="anime-right">
-        <Image>
-          <img src={Boss} width="250" height="200" alt="" />
-        </Image>
-        <Content>
-          <Title>
-            Experiência Profissional
-          </Title>
+        <Title>
+          Experiência Profissional
+        </Title>
+
+        <Content position="right">
+          <Image>
+            <img src={Boss} width="250" height="200" alt="" />
+          </Image>
           <Description>
             2019 - 2020 Estagiário na Dextra
             <br />
@@ -90,18 +95,20 @@ export default function BackGround() {
       </RightCard>
 
       <Card width={window.innerWidth} className="anime-left">
+        <Title>
+          Hobbie
+        </Title>
         <Content>
-          <Title>
-            Hobbie
-          </Title>
+          <Image>
+            <img src={Controller} width="250" height="200" alt="" />
+          </Image>
           <Description>
-            No tempo livre gosto de jogar (LOL), assistir séries, e programar óbvio.
+            No tempo livre gosto de jogar jogos eletrônicos 💻,
+            assistir séries 📺, e brincar com programação ❤.
           </Description>
 
         </Content>
-        <Image>
-          <img src={Controller} width="250" height="200" alt="" />
-        </Image>
+
       </Card>
 
       <Div>

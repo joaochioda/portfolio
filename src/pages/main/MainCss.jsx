@@ -22,23 +22,22 @@ export const TopText = styled.div`
 `;
 
 export const Card = styled.div`
-  padding-left: ${(props) => props.width / 2 - props.width / 4}px;
+  padding-left: ${(props) => (props.width < 768 ? 0 : props.width / 2 - props.width / 4)}px;
+  margin: ${(props) => (props.width < 768 ? '20' : 'none')}px;
   padding-bottom: 50px;
   display: flex;
-  width: 700px;
+  width: ${(props) => props.width / 2}px;
   max-height: 400px;
+  flex-direction: column;
 `;
 
 export const RightCard = styled(Card)`
-  @media (max-width: 768px) {
-    padding-left: 230px;
-  }
-  padding-left: ${(props) => props.width / 2 - props.width / 10}px
+  padding-left: ${(props) => (props.width < 768 ? 0 : props.width / 2 - props.width / 10)}px
 `;
 
 export const Content = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 `;
 
 export const Image = styled.div`
@@ -55,6 +54,6 @@ font-family: 'Press Start 2P', cursive;
 export const Description = styled.span`
 font-family: 'Mali', cursive;
   font-size: 20px;
-  
+  padding-left: 20px;
   padding-top: 16px;
 `;
