@@ -46,14 +46,38 @@ export const Image = styled.div`
 `;
 
 export const Title = styled.span`
+@media (min-width: 768px) {
 font-family: 'Press Start 2P', cursive;
   font-size: 32px;
   color: #800080;
+}
+
+font-size: 48px;
+color: #800080;
 `;
 
 export const Description = styled.span`
-font-family: 'Mali', cursive;
+@media (min-width: 768px) {
+  font-family: 'Mali', cursive;
   font-size: 20px;
   padding-left: 20px;
   padding-top: 16px;
+}
+  font-size: 24px;
+  padding-left: 20px;
+  padding-top: 16px;
+`;
+
+export const SendMeEmail = styled.div`
+@media (min-width: 768px) {
+font-family: 'Mali', cursive;
+font-size: 58px;
+color: #800080;
+margin: 150px 20px 20px 100px;
+}
+
+font-size: 28px;
+color: #800080;
+margin: 20px 20px 20px 20px;
+font
 `;

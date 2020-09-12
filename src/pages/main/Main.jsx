@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import {
-  Div, TopText, Card, Title, Description, Content, Image, RightCard,
+  Div, TopText, Card, Title, Description, Content, Image, RightCard, SendMeEmail,
 } from './MainCss';
 import { Contact } from '../contact/Contact.jsx';
 import { Projects } from '../projects/Projects.jsx';
@@ -14,16 +14,12 @@ import '../../components/main.css';
 
 export default function BackGround() {
   const { t } = useTranslation();
-  const offset = window.innerWidth * 3 / 8;
+  const offset = window.innerWidth * 5 / 8;
   const [scrollPosition, setSrollPosition] = useState(0);
 
   const handleScroll = () => {
-    // console.log(window.innerWidth) mostrar o tamanho da tela
-    console.log(window.innerWidth);
-    // if (window.innerWidth > 1000) {
     const position = window.pageYOffset;
     setSrollPosition(position);
-    // }
   };
   const leftCards = document.getElementsByClassName('anime-left');
   const rightCards = document.getElementsByClassName('anime-right');
@@ -54,6 +50,9 @@ export default function BackGround() {
     }
   }
 
+  const renderImage = (image) => (
+    <img src={image} width={window.innerWidth > 750 ? '250' : 150} height={window.innerWidth > 750 ? '250' : 150} alt="" />
+  );
   return (
     <div id="whoiam">
 
@@ -67,7 +66,7 @@ export default function BackGround() {
         </Title>
         <Content>
           <Image>
-            <img src={Graduate} width="250" height="200" alt="" />
+            {renderImage(Graduate)}
           </Image>
           <Description>
             Formado em 2019 na faculdade de Campinas (Facamp), no curso de engenharia da Computação
@@ -84,7 +83,7 @@ export default function BackGround() {
 
         <Content position="right">
           <Image>
-            <img src={Boss} width="250" height="200" alt="" />
+            {renderImage(Boss)}
           </Image>
           <Description>
             2019 - 2020 Estagiário na Dextra
@@ -100,7 +99,7 @@ export default function BackGround() {
         </Title>
         <Content>
           <Image>
-            <img src={Controller} width="250" height="200" alt="" />
+            {renderImage(Controller)}
           </Image>
           <Description>
             No tempo livre gosto de jogar jogos eletrônicos 💻,
@@ -115,6 +114,10 @@ export default function BackGround() {
         <Projects />
       </Div>
       <Div>
+        <SendMeEmail>
+          Gostou de mim? Que tal me mandar um email pra conversarmos ?
+
+        </SendMeEmail>
         <Contact />
       </Div>
     </div>
