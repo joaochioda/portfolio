@@ -36,6 +36,18 @@ export default function Header() {
     i18n.changeLanguage(lng);
   };
 
+  let prevScrollPos = window.pageYOffset;
+  window.onscroll = () => {
+    const currentScrollPos = window.pageYOffset;
+
+    if (prevScrollPos > currentScrollPos) {
+      document.getElementById('jao38').style.top = '0';
+    } else {
+      document.getElementById('jao38').style.top = '-120px';
+    }
+
+    prevScrollPos = currentScrollPos;
+  };
   const renderIcons = (icon) => {
     if (icon === 'EmojiPeople') {
       return <EmojiPeople />;
@@ -48,10 +60,10 @@ export default function Header() {
     }
   };
 
-  const renderFlag = (flag === 'Brasil' ? <img src={Eua} width="36" height="24" alt="" /> : <img src={Brasil} alt="" width="36" height="24" onClick={() => changeLanguage('pt')} />);
+  const renderFlag = (flag === 'Brasil' ? <img src={Eua} width="36" height="24" alt="" onClick={() => changeLanguage('en')} /> : <img src={Brasil} alt="" width="36" height="24" onClick={() => changeLanguage('pt')} />);
   return (
     <div>
-      <Nav>
+      <Nav id="jao38">
         {window.innerWidth > 768 ? (
           <Div30>
             <Label>
@@ -71,7 +83,7 @@ export default function Header() {
               aria-controls="long-menu"
               aria-haspopup="true"
             >
-              <MoreVertIcon />
+              <MoreVertIcon htmlColor="white" />
             </IconButton>
           </DivIconButton>
         )}
@@ -85,14 +97,14 @@ export default function Header() {
         </Div30Justify>
       </Nav>
       <SwipeableDrawer
-
+        className="header-swip"
         onOpen={() => console.log('oi')}
         open={openSideMenu}
         onClose={() => { console.log('oi'); setOpenSideMenu(false); }}
       >
         <List>
           {buttonsSideMenu.map((icon, index) => (
-            <ListItem button key={index}>
+            <ListItem className="header-list-item" button key={index}>
               <ListItemIcon>{renderIcons(icon.icon)}</ListItemIcon>
               <ListItemText primary={icon.text} />
             </ListItem>

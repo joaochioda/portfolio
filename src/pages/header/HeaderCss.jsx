@@ -1,17 +1,19 @@
 import styled, { keyframes } from 'styled-components';
+import ListItem from '@material-ui/core/ListItem';
 import Button from '@material-ui/core/Button';
 
 export const Nav = styled.div`
-  background-color: white;
+  background-color: #001f3f;
   display: flex;
   flex-direction: row;
-  margin-left: -6px;
+  margin-left: -8px;
   font-size: 20px;
   color: black;
   position: fixed;
   width: 100%;
   top: 0;
   z-index: 10;
+  transition: top 0.4s
 `;
 
 export const DivIconButton = styled.div`
@@ -41,6 +43,10 @@ export const Div40 = styled.div`
   margin: auto;
 `;
 
+export const ListItemCustom = styled(ListItem)`
+  padding-top: 32px;
+`;
+
 export const But = styled(Button)`
   background: linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)
 `;
@@ -66,9 +72,10 @@ const rotate = keyframes`
 
 export const Label = styled.span`
   font-family: 'Mali', cursive;
+  color: white;
   cursor: pointer;
   &:hover {
-    color: #800080;
+    color: green;
   }
 `;
 

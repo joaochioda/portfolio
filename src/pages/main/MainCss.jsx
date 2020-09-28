@@ -22,23 +22,22 @@ export const TopText = styled.div`
 `;
 
 export const Card = styled.div`
-  padding-left: ${props => props.width/2  - props.width/4}px;
+  padding-left: ${(props) => (props.width < 768 ? 0 : props.width / 2 - props.width / 4)}px;
+  margin: ${(props) => (props.width < 768 ? '20' : 'none')}px;
   padding-bottom: 50px;
   display: flex;
-  width: 700px;
+  width: ${(props) => props.width / 2}px;
   max-height: 400px;
+  flex-direction: column;
 `;
 
-export const RightCard =  styled(Card)`
-  @media (max-width: 768px) {
-    padding-left: 230px;
-  }
-  padding-left: ${props => props.width/2 - props.width/10}px
+export const RightCard = styled(Card)`
+  padding-left: ${(props) => (props.width < 768 ? 0 : props.width / 2 - props.width / 10)}px
 `;
 
 export const Content = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 `;
 
 export const Image = styled.div`
@@ -47,14 +46,38 @@ export const Image = styled.div`
 `;
 
 export const Title = styled.span`
+@media (min-width: 768px) {
 font-family: 'Press Start 2P', cursive;
   font-size: 32px;
   color: #800080;
+}
+
+font-size: 48px;
+color: #800080;
 `;
 
 export const Description = styled.span`
-font-family: 'Mali', cursive;
+@media (min-width: 768px) {
+  font-family: 'Mali', cursive;
   font-size: 20px;
-  
+  padding-left: 20px;
   padding-top: 16px;
+}
+  font-size: 24px;
+  padding-left: 20px;
+  padding-top: 16px;
+`;
+
+export const SendMeEmail = styled.div`
+@media (min-width: 768px) {
+font-family: 'Mali', cursive;
+font-size: 58px;
+color: #800080;
+margin: 150px 20px 20px 100px;
+}
+
+font-size: 28px;
+color: #800080;
+margin: 20px 20px 20px 20px;
+font
 `;

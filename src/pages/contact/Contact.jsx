@@ -1,15 +1,13 @@
 import React from 'react';
 import axios from 'axios';
-import TextField from '@material-ui/core/TextField';
 import Snackbar from '@material-ui/core/Snackbar';
 import { useTranslation } from 'react-i18next';
 import { Alert } from '@material-ui/lab';
 import Button from '@material-ui/core/Button';
-import { useStyles } from './ContactCss';
+import { TextFieldCustom, FormCustom, ButtonDiv } from './ContactCss';
 
 export const Contact = () => {
   const { t } = useTranslation();
-  const classes = useStyles();
   const [values, setValues] = React.useState({
     name: '', subject: '', email: '', message: '',
   });
@@ -99,9 +97,14 @@ export const Contact = () => {
   };
   return (
     <div id="contact">
-      <form className={classes.root} noValidate autoComplete="off">
-        <TextField
+      <FormCustom
+        noValidate
+        autoComplete="off"
+
+      >
+        <TextFieldCustom
           id="contact-text-email"
+          style={{ marginTop: '8px' }}
           data-testid="batata"
           label={t('contact.email')}
           variant="outlined"
@@ -112,7 +115,8 @@ export const Contact = () => {
           value={values.email}
           onChange={(event) => handleChange(event.target.name, event.target.value)}
         />
-        <TextField
+        <TextFieldCustom
+          style={{ marginTop: '8px' }}
           id="outlined-basic"
           label={t('contact.name')}
           variant="outlined"
@@ -123,8 +127,8 @@ export const Contact = () => {
           value={values.name}
           onChange={(event) => handleChange(event.target.name, event.target.value)}
         />
-        <TextField
-          id=""
+        <TextFieldCustom
+          style={{ marginTop: '8px' }}
           label={t('contact.subject')}
           variant="outlined"
           name="subject"
@@ -134,8 +138,8 @@ export const Contact = () => {
           value={values.subject}
           onChange={(event) => handleChange(event.target.name, event.target.value)}
         />
-        <TextField
-          id=""
+        <TextFieldCustom
+          style={{ marginTop: '8px' }}
           label={t('contact.message')}
           multiline
           required
@@ -147,12 +151,12 @@ export const Contact = () => {
           onChange={(event) => handleChange(event.target.name, event.target.value)}
           variant="outlined"
         />
-      </form>
-      <div>
+      </FormCustom>
+      <ButtonDiv>
         <Button id="contact-send" variant="contained" color="primary" onClick={() => validateInputs()} disabled={disabledButton}>
           {t('contact.send')}
         </Button>
-      </div>
+      </ButtonDiv>
       <Snackbar open={openSucess} autoHideDuration={6000} onClose={handleClose}>
         <Alert onClose={handleClose} severity="success">
           {t('contact.sucess')}

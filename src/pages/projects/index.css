@@ -5,3 +5,19 @@
     margin: auto;
     border-radius: 50%;
 }
+
+@media (min-width: 700px) {
+    .bla {
+        height: 480px;
+        width: 927px;
+    }
+  }
+
+.bla {
+    height: 480px;
+    width: 600;
+}
+
+.teste .carousel .slide img {
+    height: 100%;
+}
