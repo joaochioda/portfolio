@@ -9,55 +9,34 @@ const { Carousel } = require('react-responsive-carousel');
 export const Projects = () => (
   <CarouselDiv className="teste">
     <Carousel showArrows>
-      <div>
-        <img alt="" src="http://lorempixel.com/output/cats-q-c-640-480-1.jpg" />
-        <p className="legend">Legend 1</p>
+      <div className="bla">
+        <img alt="" src="https://user-images.githubusercontent.com/47106171/93672386-d7b5df80-fa80-11ea-99ff-5630ae111400.gif" />
+        <p className="legend">Super calculadora (html + css)</p>
       </div>
-      <div>
-        <img alt="" src="http://lorempixel.com/output/cats-q-c-640-480-2.jpg" />
-        <p className="legend">Legend 2</p>
-      </div>
-      <div>
-        <img alt="" src="http://lorempixel.com/output/cats-q-c-640-480-3.jpg" />
-        <p className="legend">Legend 3</p>
-      </div>
-      <div>
-        <img alt="" src="http://lorempixel.com/output/cats-q-c-640-480-4.jpg" />
-        <p className="legend">Legend 4</p>
-      </div>
-      <div>
-        <img alt="" src="http://lorempixel.com/output/cats-q-c-640-480-5.jpg" />
-        <p className="legend">Legend 5</p>
-      </div>
-      <div>
-        <img alt="" src="http://lorempixel.com/output/cats-q-c-640-480-6.jpg" />
-        <p className="legend">Legend 6</p>
-      </div>
-      <div>
-        <img alt="" src="http://lorempixel.com/output/cats-q-c-640-480-7.jpg" />
-        <p className="legend">Legend 7</p>
-      </div>
-      <div>
-        <img alt="" src="http://lorempixel.com/output/cats-q-c-640-480-8.jpg" />
-        <p className="legend">Legend 8</p>
-      </div>
-      <div>
-        <img alt="" src="http://lorempixel.com/output/cats-q-c-640-480-9.jpg" />
-        <p className="legend">Legend 9</p>
-      </div>
-      <div>
-        <img alt="" src="http://lorempixel.com/output/cats-q-c-640-480-10.jpg" />
-        <p className="legend">Legend 10</p>
-      </div>
-      <div>
-        <img alt="" src="http://lorempixel.com/output/cats-q-c-640-480-11.jpg" />
-        <p className="legend">Legend 11</p>
-      </div>
-      <div>
-        <img alt="" src="http://lorempixel.com/output/cats-q-c-640-480-12.jpg" />
-        <p className="legend">Legend 12</p>
+      <div className="bla">
+        <img alt="" src="https://user-images.githubusercontent.com/47106171/94351450-f68f1580-002e-11eb-910a-b34a44086001.gif" />
+        <p className="legend">Filtro de pessoas (html + css)</p>
       </div>
 
+      <div className="bla">
+        <img alt="" src="https://user-images.githubusercontent.com/47106171/94488292-bf4c7000-01b8-11eb-9471-bb0a252c8469.PNG" />
+        <p className="legend">Projeto flutter</p>
+      </div>
+
+      <div className="bla">
+        <img alt="" src="https://user-images.githubusercontent.com/47106171/94367802-487b7e00-00b7-11eb-8da9-7af176d17d3d.gif" />
+        <p className="legend">Bootcamp react</p>
+      </div>
+
+      <div className="bla">
+        <img alt="" src="https://user-images.githubusercontent.com/47106171/93395726-cab0aa80-f84c-11ea-8ff4-78b7e3823f53.gif" />
+        <p className="legend">Treinando css 1</p>
+      </div>
+
+      <div className="bla">
+        <img alt="" src="https://user-images.githubusercontent.com/47106171/92765673-ef4be480-f36b-11ea-9e4d-d09118998c13.gif" />
+        <p className="legend">Treinando css 2</p>
+      </div>
     </Carousel>
   </CarouselDiv>
 );
