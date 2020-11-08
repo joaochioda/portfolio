@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import ListItem from '@material-ui/core/ListItem';
 import Button from '@material-ui/core/Button';
 
@@ -29,6 +29,7 @@ export const Div30 = styled.div`
     min-width: 320px;
     width: 30%;
     align-items: center;
+    padding-left: 10px;
   }
   
 `;
@@ -60,16 +61,6 @@ export const Div30Justify = styled(Div30)`
   justify-content: center !important;
 `;
 
-const rotate = keyframes`
-  from {
-    transform: scale(1.0);
-  }
-
-  to {
-    transform: scale(1.15);
-  }
-`;
-
 export const Label = styled.span`
   font-family: 'Mali', cursive;
   color: white;
@@ -79,8 +70,61 @@ export const Label = styled.span`
   }
 `;
 
-export const Flag = styled(Label)`
-&:hover {
-  animation: ${rotate} 0.5s linear forwards;
+
+export const Flag = styled.div`
+@media (min-width: 768px) {
+  .maincontainer {
+    position: relative;
+    width: 46px;
+    height: 33px;
+  }
+  
+  .thecard {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: all 0.5s ease-in-out;
+    margin: 0;
+  }
+  
+  .thefront {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    background: red;
+    color: purple;
+  }
+  
+  .theback {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    background: gray;
+    color: purple;
+    transform: rotateY(180deg);
+  }
+  
+  .thecard:hover {
+    transform: rotateY(180deg)
+  }
+  .mobile {
+    display:none;
+  }
 }
+@media (max-width: 768px) {
+  .maincontainer {
+    display:none;
+  }
+}
+cursor: pointer;
+margin: 0 10px 0 10px;
+`;
+
+export const Icon = styled.div`
+filter: ${(props) => (props.white ? 'invert(98%) sepia(2%) saturate(4%) hue-rotate(287deg) brightness(116%) contrast(100%)' : '')};
+margin: 0 10px 0 10px;
+cursor: pointer;
 `;

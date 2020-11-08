@@ -17,8 +17,11 @@
     "subject": "Subject",
     "message": "Message",
     "send": "Send",
-    "sucess": "Sucess sending email !",
-    "error": "Error sending email !",
+    "sucess": "Sucess sending email!",
+    "error": "Error sending email!",
     "required": "Required field"
+  },
+  "email": {
+    "message": "How about we talk? Send a message right now"
   }
 }

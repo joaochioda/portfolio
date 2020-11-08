@@ -20,5 +20,8 @@
     "sucess": "Email enviado com sucesso !",
     "error": "Falha ao enviar o email !",
     "required": "Campo obrigatório"
+  },
+  "email": {
+    "message": "Que tal conversarmos? Mande uma mensagem agora mesmo" 
   }
 }

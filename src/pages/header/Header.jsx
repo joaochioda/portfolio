@@ -14,8 +14,10 @@ import ViewCarousel from '@material-ui/icons/ViewCarousel';
 import MailIcon from '@material-ui/icons/Mail';
 import Brasil from '../../resources/brasil.jpg';
 import Eua from '../../resources/eua.jpg';
+import Linkedin from '../../resources/linkedin.png';
+import Git from '../../resources/git1.png';
 import {
-  Nav, Label, Div40, Div30, Div30Justify, Flag, DivIconButton,
+  Nav, Label, Div40, Div30, Div30Justify, Flag, DivIconButton, Icon,
 } from './HeaderCss';
 
 import './index.css';
@@ -60,7 +62,8 @@ export default function Header() {
     }
   };
 
-  const renderFlag = (flag === 'Brasil' ? <img src={Eua} width="36" height="24" alt="" onClick={() => changeLanguage('en')} /> : <img src={Brasil} alt="" width="36" height="24" onClick={() => changeLanguage('pt')} />);
+  const brazilFlag = (flag === 'Brasil' ? <img src={Brasil} alt="" width="46" height="33" /> : <img src={Eua} width="46" height="33" alt="" />);
+  const euaFlag = (flag === 'Brasil' ? <img src={Eua} width="46" height="33" alt="" /> : <img src={Brasil} alt="" width="46" height="33" />);
   return (
     <div>
       <Nav id="jao38">
@@ -92,8 +95,36 @@ export default function Header() {
         </Div40>
         <Div30Justify>
           <Flag>
-            {renderFlag}
+            <div className="maincontainer" onClick={() => (flag === 'Brasil' ? changeLanguage('en') : changeLanguage('pt'))} role="button" tabIndex={0}>
+              <div className="thecard">
+                <div className="thefront">
+                  {brazilFlag}
+                </div>
+                <div className="theback">
+                  {euaFlag}
+                </div>
+
+              </div>
+            </div>
+            <div className="mobile" onClick={() => (flag === 'Brasil' ? changeLanguage('en') : changeLanguage('pt'))} role="button" tabIndex={0}>
+              {brazilFlag}
+            </div>
           </Flag>
+
+          <Icon white>
+            <a href="https://www.linkedin.com/in/joaoguilherme38/" target="_blank" rel="noopener noreferrer">
+              <img src={Linkedin} width="34" height="34" alt="" />
+            </a>
+          </Icon>
+
+          <Icon white>
+            <a href="https://github.com/joaochioda" target="_blank" rel="noopener noreferrer">
+
+              <img src={Git} width="34" height="34" alt="" />
+            </a>
+
+          </Icon>
+
         </Div30Justify>
       </Nav>
       <SwipeableDrawer

@@ -115,8 +115,7 @@ export default function BackGround() {
       </Div>
       <Div>
         <SendMeEmail>
-          Gostou de mim? Que tal me mandar um email pra conversarmos ?
-
+          {t('email.message')}
         </SendMeEmail>
         <Contact />
       </Div>
