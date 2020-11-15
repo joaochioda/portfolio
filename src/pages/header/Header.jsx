@@ -67,29 +67,29 @@ export default function Header() {
   return (
     <div>
       <Nav id="jao38">
-        {window.innerWidth > 768 ? (
-          <Div30>
-            <Label>
-              <Link style={{ textDecoration: 'none' }} activeClass="active" to="whoiam" spy smooth duration={1000}>{t('header.whoami')}</Link>
-            </Label>
-            <Label>
-              <Link style={{ textDecoration: 'none' }} activeClass="active" to="projects" spy smooth duration={1000}>{t('header.projects')}</Link>
-            </Label>
-            <Label>
-              <Link style={{ textDecoration: 'none' }} activeClass="active" to="contact" spy smooth duration={1000}>{t('header.contact')}</Link>
-            </Label>
-          </Div30>
-        ) : (
-          <DivIconButton onClick={() => setOpenSideMenu(true)}>
-            <IconButton
-              aria-label="more"
-              aria-controls="long-menu"
-              aria-haspopup="true"
-            >
-              <MoreVertIcon htmlColor="white" />
-            </IconButton>
-          </DivIconButton>
-        )}
+
+        <Div30>
+          <Label>
+            <Link style={{ textDecoration: 'none' }} activeClass="active" to="whoiam" spy smooth duration={1000}>{t('header.whoami')}</Link>
+          </Label>
+          <Label>
+            <Link style={{ textDecoration: 'none' }} activeClass="active" to="projects" spy smooth duration={1000}>{t('header.projects')}</Link>
+          </Label>
+          <Label>
+            <Link style={{ textDecoration: 'none' }} activeClass="active" to="contact" spy smooth duration={1000}>{t('header.contact')}</Link>
+          </Label>
+        </Div30>
+
+        <DivIconButton onClick={() => setOpenSideMenu(true)}>
+          <IconButton
+            aria-label="more"
+            aria-controls="long-menu"
+            aria-haspopup="true"
+          >
+            <MoreVertIcon htmlColor="white" />
+          </IconButton>
+        </DivIconButton>
+
         <Div40>
           <div className="hexagon image" />
         </Div40>

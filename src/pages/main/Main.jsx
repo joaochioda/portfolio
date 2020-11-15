@@ -60,7 +60,7 @@ export default function BackGround() {
         {t('main.scroll')}
       </TopText>
 
-      <Card width={window.innerWidth} className="anime-left">
+      <Card className="anime-left">
         <Title>
           Formação
         </Title>
@@ -76,7 +76,7 @@ export default function BackGround() {
 
       </Card>
 
-      <RightCard width={window.innerWidth} className="anime-right">
+      <RightCard className="anime-right">
         <Title>
           Experiência Profissional
         </Title>
@@ -93,7 +93,7 @@ export default function BackGround() {
         </Content>
       </RightCard>
 
-      <Card width={window.innerWidth} className="anime-left">
+      <Card className="anime-left">
         <Title>
           Hobbie
         </Title>
