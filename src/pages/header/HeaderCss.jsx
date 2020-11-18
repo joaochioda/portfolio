@@ -128,7 +128,13 @@ margin: 0 10px 0 10px;
 `;
 
 export const Icon = styled.div`
+@media (max-width: 768px) {
+ display: none;
+}
 filter: ${(props) => (props.white ? 'invert(98%) sepia(2%) saturate(4%) hue-rotate(287deg) brightness(116%) contrast(100%)' : '')};
 margin: 0 10px 0 10px;
 cursor: pointer;
+&:hover {
+  filter: invert(87%) sepia(0%) saturate(504%) hue-rotate(138deg) brightness(81%) contrast(83%);
+}
 `;
