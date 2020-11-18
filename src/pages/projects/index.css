@@ -1,4 +1,4 @@
-.teste .carousel.carousel-slider .control-arrow {
+.carousel-style .carousel.carousel-slider .control-arrow {
     background: gray;
     height: 50px;
     width: 50px;
@@ -7,16 +7,16 @@
 }
 
 @media (min-width: 700px) {
-    .bla {
+    .carrousel-items {
         height: 480px;
         
     }
   }
 
-.bla {
+.carrousel-items {
     height: 480px;
 }
 
-.teste .carousel .slide img {
+.carousel-style .carousel .slide img {
     height: 100%;
 }

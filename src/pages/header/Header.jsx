@@ -9,9 +9,6 @@ import MoreVertIcon from '@material-ui/icons/MoreVert';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import EmojiPeople from '@material-ui/icons/EmojiPeople';
-import ViewCarousel from '@material-ui/icons/ViewCarousel';
-import MailIcon from '@material-ui/icons/Mail';
 import Brasil from '../../resources/brasil.jpg';
 import Eua from '../../resources/eua.jpg';
 import Linkedin from '../../resources/linkedin.png';
@@ -25,7 +22,7 @@ import './index.css';
 export default function Header() {
   const [flag, setFlag] = React.useState('Brasil');
   const [openSideMenu, setOpenSideMenu] = React.useState(false);
-  const buttonsSideMenu = [{ icon: 'EmojiPeople', text: 'WhoAmI' }, { icon: 'ViewCarousel', text: 'Projects' }, { icon: 'MailIcon', text: 'Contact' }];
+  const buttonsSideMenu = [{ icon: 'Linkedin', text: 'Linkedin', url: 'https://www.linkedin.com/in/joaoguilherme38/' }, { icon: 'GitHub', text: 'GitHub', url: 'https://github.com/joaochioda' }];
   const { t } = useTranslation();
 
   const { i18n } = useTranslation();
@@ -51,14 +48,11 @@ export default function Header() {
     prevScrollPos = currentScrollPos;
   };
   const renderIcons = (icon) => {
-    if (icon === 'EmojiPeople') {
-      return <EmojiPeople />;
+    if (icon === 'Linkedin') {
+      return <img src={Linkedin} width="34" height="34" alt="" />;
     }
-    if (icon === 'ViewCarousel') {
-      return <ViewCarousel />;
-    }
-    if (icon === 'MailIcon') {
-      return <MailIcon />;
+    if (icon === 'GitHub') {
+      return <img src={Git} width="34" height="34" alt="" />;
     }
   };
 
@@ -67,29 +61,29 @@ export default function Header() {
   return (
     <div>
       <Nav id="jao38">
-        {window.innerWidth > 768 ? (
-          <Div30>
-            <Label>
-              <Link style={{ textDecoration: 'none' }} activeClass="active" to="whoiam" spy smooth duration={1000}>{t('header.whoami')}</Link>
-            </Label>
-            <Label>
-              <Link style={{ textDecoration: 'none' }} activeClass="active" to="projects" spy smooth duration={1000}>{t('header.projects')}</Link>
-            </Label>
-            <Label>
-              <Link style={{ textDecoration: 'none' }} activeClass="active" to="contact" spy smooth duration={1000}>{t('header.contact')}</Link>
-            </Label>
-          </Div30>
-        ) : (
-          <DivIconButton onClick={() => setOpenSideMenu(true)}>
-            <IconButton
-              aria-label="more"
-              aria-controls="long-menu"
-              aria-haspopup="true"
-            >
-              <MoreVertIcon htmlColor="white" />
-            </IconButton>
-          </DivIconButton>
-        )}
+
+        <Div30>
+          <Label>
+            <Link style={{ textDecoration: 'none' }} activeClass="active" to="whoiam" spy smooth duration={1000}>{t('header.whoami')}</Link>
+          </Label>
+          <Label>
+            <Link style={{ textDecoration: 'none' }} activeClass="active" to="projects" spy smooth duration={1000}>{t('header.projects')}</Link>
+          </Label>
+          <Label>
+            <Link style={{ textDecoration: 'none' }} activeClass="active" to="contact" spy smooth duration={1000}>{t('header.contact')}</Link>
+          </Label>
+        </Div30>
+
+        <DivIconButton onClick={() => setOpenSideMenu(true)}>
+          <IconButton
+            aria-label="more"
+            aria-controls="long-menu"
+            aria-haspopup="true"
+          >
+            <MoreVertIcon htmlColor="white" />
+          </IconButton>
+        </DivIconButton>
+
         <Div40>
           <div className="hexagon image" />
         </Div40>
@@ -136,8 +130,10 @@ export default function Header() {
         <List>
           {buttonsSideMenu.map((icon, index) => (
             <ListItem className="header-list-item" button key={index}>
-              <ListItemIcon>{renderIcons(icon.icon)}</ListItemIcon>
-              <ListItemText primary={icon.text} />
+              <a href={icon.url} target="_blank" rel="noopener noreferrer" style={{ display: 'flex', textDecoration: 'none', color: 'black' }}>
+                <ListItemIcon>{renderIcons(icon.icon)}</ListItemIcon>
+                <ListItemText primary={icon.text} />
+              </a>
             </ListItem>
           ))}
         </List>

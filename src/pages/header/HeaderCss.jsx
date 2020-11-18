@@ -19,6 +19,9 @@ export const Nav = styled.div`
 export const DivIconButton = styled.div`
   display:flex;
   width: 100px;
+  @media (min-width: 768px) {
+    display: none;
+  }
 `;
 
 export const Div30 = styled.div`
@@ -31,7 +34,7 @@ export const Div30 = styled.div`
     align-items: center;
     padding-left: 10px;
   }
-  
+  display: none;
 `;
 
 export const Div40 = styled.div`
@@ -53,12 +56,14 @@ export const But = styled(Button)`
 `;
 
 export const Div30Justify = styled(Div30)`
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   display: flex;
   align-items: center;
-  width: 100px
+  justify-content: flex-end;
+  margin-right: 50px;
 }
-  justify-content: center !important;
+display: flex;
+align-items: center;
 `;
 
 export const Label = styled.span`
@@ -69,7 +74,6 @@ export const Label = styled.span`
     color: green;
   }
 `;
-
 
 export const Flag = styled.div`
 @media (min-width: 768px) {
@@ -124,7 +128,13 @@ margin: 0 10px 0 10px;
 `;
 
 export const Icon = styled.div`
+@media (max-width: 768px) {
+ display: none;
+}
 filter: ${(props) => (props.white ? 'invert(98%) sepia(2%) saturate(4%) hue-rotate(287deg) brightness(116%) contrast(100%)' : '')};
 margin: 0 10px 0 10px;
 cursor: pointer;
+&:hover {
+  filter: invert(87%) sepia(0%) saturate(504%) hue-rotate(138deg) brightness(81%) contrast(83%);
+}
 `;
