@@ -38,3 +38,8 @@
     filter: invert(22%) sepia(72%) saturate(730%) hue-rotate(253deg) brightness(89%) contrast(90%)
 
 }
+
+.carousel .thumbs {
+    display: flex;
+    justify-content: center;
+}

@@ -79,7 +79,8 @@ export const SendMeEmail = styled.div`
 font: 600 'Nunito', sans-serif;
 font-size: 58px;
 color: #800080;
-margin: 150px 20px 20px 100px;
+margin: 150px 20px 20px;
+text-align: center;
 }
 
 font-size: 28px;
