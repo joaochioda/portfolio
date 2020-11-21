@@ -16,7 +16,7 @@
     "subject": "Subject",
     "message": "Message",
     "send": "Send",
-    "sucess": "Sucess sending email!",
+    "sucess": "Sucess sending message!",
     "error": "Error sending email!",
     "required": "Required field"
   },

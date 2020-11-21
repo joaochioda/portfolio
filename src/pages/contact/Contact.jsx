@@ -1,10 +1,13 @@
 import React from 'react';
-import axios from 'axios';
 import Snackbar from '@material-ui/core/Snackbar';
 import { useTranslation } from 'react-i18next';
 import { Alert } from '@material-ui/lab';
 import Button from '@material-ui/core/Button';
+import firebase from 'firebase';
 import { TextFieldCustom, FormCustom, ButtonDiv } from './ContactCss';
+import { Config } from '../../.keys/firebase.js';
+
+firebase.initializeApp(Config);
 
 export const Contact = () => {
   const { t } = useTranslation();
@@ -20,6 +23,8 @@ export const Contact = () => {
     subject: Boolean,
     message: Boolean,
   });
+
+  // data.key, data.val().title, data.val().description
 
   const handleChange = (nameField, valueField) => {
     setValues((values) => ({ ...values, [nameField]: valueField }));
@@ -60,24 +65,16 @@ export const Contact = () => {
 
   const sendEmail = () => {
     setDisabledButton(true);
-    axios({
-      method: 'post',
-      url: 'https://us-central1-portfolio-joao.cloudfunctions.net/sendMail',
-      data: {
-        email: values.email,
-        name: values.name,
-        subject: values.subject,
-        message: values.message,
-      },
-    }).then(() => {
-      setOpenSucess(true);
-      setDisabledButton(false);
-    }).catch((error) => {
-      setDisabledButton(false);
-      setOpenError(true);
-      // eslint-disable-next-line no-console
-      console.log(error);
+
+    firebase.database().ref('messages').push({
+      email: values.email,
+      name: values.name,
+      subject: values.subject,
+      message: values.message,
     });
+
+    setOpenSucess(true);
+    setDisabledButton(false);
   };
 
   const showError = (type) => {
