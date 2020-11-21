@@ -47,7 +47,7 @@ export const Content = styled.div`
 
 export const Image = styled.div`
   margin-top: 32px;
-  filter: invert(8%) sepia(94%) saturate(5115%) hue-rotate(297deg) brightness(96%) contrast(106%);
+  filter: invert(22%) sepia(72%) saturate(730%) hue-rotate(253deg) brightness(89%) contrast(90%)
 `;
 
 export const Title = styled.span`
@@ -63,10 +63,10 @@ color: #800080;
 
 export const Description = styled.span`
 @media (min-width: 768px) {
-  font-family: 'Mali', cursive;
+  font: 600 20px 'Nunito', sans-serif;
   font-size: 20px;
   padding-left: 20px;
-  padding-top: 16px;
+  padding-top: 100px;
 }
   width: 400px;
   font-size: 24px;
@@ -76,7 +76,7 @@ export const Description = styled.span`
 
 export const SendMeEmail = styled.div`
 @media (min-width: 768px) {
-font-family: 'Mali', cursive;
+font: 600 'Nunito', sans-serif;
 font-size: 58px;
 color: #800080;
 margin: 150px 20px 20px 100px;

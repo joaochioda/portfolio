@@ -1,5 +1,8 @@
 import React from 'react';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
+import Tooltip from '@material-ui/core/Tooltip';
+import Fade from '@material-ui/core/Fade';
 import { CarouselDiv } from './ProjectsCss';
 import ModalProjects from './ModalProjects';
 
@@ -66,6 +69,11 @@ export const Projects = () => {
       {open !== -1
       && <ModalProjects open={open} handleClose={handleClose} myProjects={myProjects} /> }
       <CarouselDiv className="carousel-style">
+        <div className="info-icon">
+          <Tooltip title={<p style={{ fontSize: '12px' }}>Clique nas imagens para entender melhor cada projeto</p>} placement="left-start" TransitionComponent={Fade} TransitionProps={{ timeout: 600 }}>
+            <InfoOutlinedIcon fontSize="large" />
+          </Tooltip>
+        </div>
         <Carousel showArrows>
           <div className="carrousel-items" role="button" tabIndex={0} onClick={() => handleOpen(0)}>
             <img alt="" src="https://user-images.githubusercontent.com/47106171/93672386-d7b5df80-fa80-11ea-99ff-5630ae111400.gif" />

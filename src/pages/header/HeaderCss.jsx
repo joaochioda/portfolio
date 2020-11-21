@@ -67,11 +67,11 @@ align-items: center;
 `;
 
 export const Label = styled.span`
-  font-family: 'Mali', cursive;
+  font: 600 22px 'Nunito', sans-serif;
   color: white;
   cursor: pointer;
   &:hover {
-    color: green;
+   color: #888888;
   }
 `;
 
