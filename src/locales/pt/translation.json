@@ -17,7 +17,7 @@
     "subject": "Assunto",
     "message": "Mensagem",
     "send": "Enviar",
-    "sucess": "Email enviado com sucesso !",
+    "sucess": "Mensagem enviada com sucesso!",
     "error": "Falha ao enviar o email !",
     "required": "Campo obrigatório"
   },

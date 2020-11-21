@@ -49,8 +49,8 @@ jobs:
           name: install dependencies
           command: npm install
       - run:
-          name: install functions
-          command: cd functions && npm install
+          name: Decrypt files
+          command: 'echo ${PASS_DECRYPT} | ./scripts/decrypt.sh'
       - save_cache:
           key: dependency-cache-{{ checksum "package-lock.json" }}
           paths:
