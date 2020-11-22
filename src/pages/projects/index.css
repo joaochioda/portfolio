@@ -14,12 +14,32 @@
     max-width: 1000px;
 }
 
-@media (min-width: 700px) {
+.info-icon {
+    display: none;
+}
+
+.info-icon-mobile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font: 600 20px 'Nunito', sans-serif;
+}
+
+@media (min-width: 768px) {
     .carrousel-items {
         height: 480px;
     }
     .carousel .slide .legend {
         font-size: 28px;
+    }
+    .info-icon {
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 10px;
+        filter: invert(22%) sepia(72%) saturate(730%) hue-rotate(253deg) brightness(89%) contrast(90%)    
+    }
+    .info-icon-mobile {
+        display: none;
     }
   }
 
@@ -31,13 +51,7 @@
     height: 100%;
 }
 
-.info-icon {
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom: 10px;
-    filter: invert(22%) sepia(72%) saturate(730%) hue-rotate(253deg) brightness(89%) contrast(90%)
 
-}
 
 .carousel .thumbs {
     display: flex;

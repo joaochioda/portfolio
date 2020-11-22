@@ -74,6 +74,9 @@ export const Projects = () => {
             <InfoOutlinedIcon fontSize="large" />
           </Tooltip>
         </div>
+        <div className="info-icon-mobile">
+          <p>Clique nas imagens para entender melhor cada projeto</p>
+        </div>
         <Carousel showArrows>
           <div className="carrousel-items" role="button" tabIndex={0} onClick={() => handleOpen(0)}>
             <img alt="" src="https://user-images.githubusercontent.com/47106171/93672386-d7b5df80-fa80-11ea-99ff-5630ae111400.gif" />

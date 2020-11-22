@@ -17,14 +17,19 @@ import node from '../../resources/node.png';
 import postgres from '../../resources/postgres.png';
 
 function getModalStyle() {
+  if (window.innerWidth > 768) {
+    return {
+      top: '25%',
+      left: '25%',
+    };
+  }
   return {
     top: '25%',
-    left: '25%',
+    left: '15%',
   };
 }
 
 const renderChips = (type) => {
-  console.log(type);
   if (type === 'JavaScript') {
     return (
       <ChipJs
