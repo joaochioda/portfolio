@@ -63,10 +63,10 @@ export const Contact = () => {
     }
   };
 
-  const sendEmail = () => {
+  const sendEmail = async () => {
     setDisabledButton(true);
 
-    firebase.database().ref('messages').push({
+    await firebase.database().ref('messages').push({
       email: values.email,
       name: values.name,
       subject: values.subject,

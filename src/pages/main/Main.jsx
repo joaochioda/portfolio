@@ -14,7 +14,12 @@ import '../../components/main.css';
 
 export default function BackGround() {
   const { t } = useTranslation();
-  const offset = window.innerWidth * 5 / 8;
+  let offset;
+  if (window.innerWidth > 900) {
+    offset = window.innerWidth * 3 / 8;
+  } else {
+    offset = window.innerWidth * 5 / 8;
+  }
   const [scrollPosition, setSrollPosition] = useState(0);
 
   const handleScroll = () => {

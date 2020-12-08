@@ -47,6 +47,11 @@ const myProjects = [
     tecnologies: ['React', 'Node', 'CSS', 'Postgres'],
   },
   {
+    title: 'Leitor de mensagens',
+    description: 'Ao logar com a conta do google, eu consigo ler as mensagem que me foram enviadas pelo site. É possível marcar elas como lidas e até excluí-las se necessário. Foi utilizado o realtime database do Firebase.',
+    tecnologies: ['ReactNative', 'CSS'],
+  },
+  {
     title: 'Treinando Css',
     description: 'Projeto pessoal para treinar css. A cada dia é feito um mini projetinho.',
     tecnologies: ['HTML', 'CSS'],
@@ -75,7 +80,7 @@ export const Projects = () => {
           </Tooltip>
         </div>
         <div className="info-icon-mobile">
-          <p>Clique nas imagens para entender melhor cada projeto</p>
+          <p style={{ color: '#800080' }}>Clique nas imagens para entender melhor cada projeto</p>
         </div>
         <Carousel showArrows>
           <div className="carrousel-items" role="button" tabIndex={0} onClick={() => handleOpen(0)}>
@@ -110,6 +115,11 @@ export const Projects = () => {
           </div>
 
           <div className="carrousel-items" role="button" tabIndex={0} onClick={() => handleOpen(7)}>
+            <img alt="" src="https://user-images.githubusercontent.com/47106171/101490930-cffc2d80-3941-11eb-9324-46afaa8dcf97.gif" />
+            <p className="legend">Leitor de mensagens</p>
+          </div>
+
+          <div className="carrousel-items" role="button" tabIndex={0} onClick={() => handleOpen(8)}>
             <img alt="" src="https://user-images.githubusercontent.com/47106171/99467951-34693580-291e-11eb-9528-410ff77f33f9.gif" />
             <p className="legend">Treinando Css</p>
           </div>

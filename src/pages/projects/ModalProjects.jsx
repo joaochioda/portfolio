@@ -57,6 +57,16 @@ const renderChips = (type) => {
         label="React"
       />
     );
+  }
+  if (type === 'ReactNative') {
+    return (
+      <ChipReact
+        variant="outlined"
+        size="medium"
+        avatar={<Avatar src={react} />}
+        label="React Native"
+      />
+    );
   } if (type === 'CSS') {
     return (
       <ChipCss
@@ -126,7 +136,6 @@ function ModalProjects({ open, handleClose, myProjects }) {
   const classes = useStyles();
   return (
     <div>
-      {' '}
       <Modal
         aria-labelledby="simple-modal-title"
         aria-describedby="simple-modal-description"
@@ -138,7 +147,7 @@ function ModalProjects({ open, handleClose, myProjects }) {
           <p id="simple-modal-description">
             {myProjects[open].description}
           </p>
-          <footer>Tecnologias</footer>
+          <footer style={{ marginBottom: '10px' }}>Tecnologias</footer>
           {myProjects[open].tecnologies.map((tecnologie) => renderChips(tecnologie))}
 
         </div>
