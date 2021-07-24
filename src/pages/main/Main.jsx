@@ -123,12 +123,14 @@ export default function BackGround() {
           Projetos
         </div>
         <ProjectContainer>
-          {myProjects.map((project) => (
+          {myProjects.map((project, index) => (
             <ProjectCard
+              key={index}
               title={project.title}
               description={project.description}
               tecnologies={project.tecnologies}
               src={project.src}
+              git={project.git}
             />
           ))}
         </ProjectContainer>

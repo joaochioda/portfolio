@@ -15,10 +15,11 @@ import spring from '../../resources/spring.png';
 import node from '../../resources/node.png';
 import postgres from '../../resources/postgres.png';
 
-const renderChips = (type) => {
+const renderChips = (type, index) => {
   if (type === 'JavaScript') {
     return (
       <ChipJs
+        key={index}
         variant="outlined"
         size="medium"
         avatar={<Avatar src={js} />}
@@ -28,6 +29,7 @@ const renderChips = (type) => {
   } if (type === 'HTML') {
     return (
       <ChipHtml
+        key={index}
         variant="outlined"
         size="medium"
         avatar={<Avatar src={html} />}
@@ -37,6 +39,7 @@ const renderChips = (type) => {
   } if (type === 'React') {
     return (
       <ChipReact
+        key={index}
         variant="outlined"
         size="medium"
         avatar={<Avatar src={react} />}
@@ -47,15 +50,27 @@ const renderChips = (type) => {
   if (type === 'ReactNative') {
     return (
       <ChipReact
+        key={index}
         variant="outlined"
         size="medium"
         avatar={<Avatar src={react} />}
         label="React Native"
       />
     );
+  } if (type === 'Next') {
+    return (
+      <ChipReact
+        key={index}
+        variant="outlined"
+        size="medium"
+        avatar={<Avatar src={react} />}
+        label="Next"
+      />
+    );
   } if (type === 'CSS') {
     return (
       <ChipCss
+        key={index}
         variant="outlined"
         size="medium"
         avatar={<Avatar src={css} />}
@@ -66,6 +81,7 @@ const renderChips = (type) => {
   if (type === 'Spring') {
     return (
       <ChipSpring
+        key={index}
         variant="outlined"
         size="medium"
         avatar={<Avatar src={spring} />}
@@ -76,6 +92,7 @@ const renderChips = (type) => {
   if (type === 'Flutter') {
     return (
       <ChipFlutter
+        key={index}
         variant="outlined"
         size="medium"
         avatar={<Avatar src={flutter} />}
@@ -86,6 +103,7 @@ const renderChips = (type) => {
   if (type === 'Node') {
     return (
       <ChipNode
+        key={index}
         variant="outlined"
         size="medium"
         avatar={<Avatar src={node} />}
@@ -96,6 +114,7 @@ const renderChips = (type) => {
   if (type === 'Postgres') {
     return (
       <ChipPostgres
+        key={index}
         variant="outlined"
         size="medium"
         avatar={<Avatar src={postgres} />}
@@ -106,23 +125,36 @@ const renderChips = (type) => {
 };
 
 export default function ProjectCard({
-  title, description, tecnologies, src,
+  title, description, tecnologies, src, git,
 }) {
-  return (
+  const cardDesktop = () => (
     <div className="card">
       <div className="face front">
         <div className="content">
           <h3>{title}</h3>
           <h4>{description}</h4>
           <div className="chips">
-            {tecnologies.map((tecnologie) => renderChips(tecnologie))}
+            {tecnologies.map((tecnologie, index) => renderChips(tecnologie, index))}
           </div>
         </div>
       </div>
       <div className="face back">
-        <img src={src} width="90%" height="90%" alt={title} />
+        <img src={src} width="90%" height="80%" alt={title} />
+        <a href={git} target="_blank" rel="noopener noreferrer">Acesse o repo aqui</a>
       </div>
 
     </div>
+  );
+
+  const cardMobile = () => (
+    <div className="card-mobile">
+      <div className="face front">
+        <h3>{title}</h3>
+        <img src={src} width="100%" height="75%" alt={title} />
+      </div>
+    </div>
+  );
+  return (
+    window.innerWidth < 720 ? cardMobile() : cardDesktop()
   );
 }
