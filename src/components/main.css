@@ -14,3 +14,11 @@
     opacity: 1;
     transform: translate3d(0,0,0);
 }
+
+.projetos-title {
+    text-align: center;
+    font-family: 'Press Start 2P',cursive;
+    font-size: 32px;
+    color: #800080;
+    margin: 120px 0px;
+}

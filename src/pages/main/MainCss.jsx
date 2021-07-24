@@ -4,6 +4,25 @@ export const Div = styled.div`
     margin: 5px;
 `;
 
+export const ProjectContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  justify-self: center;
+  grid-row-gap: 60px;
+  @media (min-width: 1066px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (min-width: 1590px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media (min-width: 2122px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .card {
+    justify-self: center;
+  }
+`;
+
 export const TopText = styled.div`
     padding-top: 150px;
     padding-bottom: 100px;
@@ -62,6 +81,7 @@ color: #800080;
 `;
 
 export const Description = styled.span`
+color: #800080;
 @media (min-width: 768px) {
   font: 600 20px 'Nunito', sans-serif;
   font-size: 20px;

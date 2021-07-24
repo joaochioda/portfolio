@@ -3,14 +3,15 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import {
-  Div, TopText, Card, Title, Description, Content, Image, RightCard, SendMeEmail,
+  Div, TopText, Card, Title, Description, Content, Image, RightCard, SendMeEmail, ProjectContainer,
 } from './MainCss';
 import { Contact } from '../contact/Contact.jsx';
-import { Projects } from '../projects/Projects.jsx';
 import Graduate from '../../resources/graduate.png';
 import Boss from '../../resources/boss.svg';
 import Controller from '../../resources/controller.png';
+import ProjectCard from '../../components/projectCard';
 import '../../components/main.css';
+import { myProjects } from './projects';
 
 export default function BackGround() {
   const { t } = useTranslation();
@@ -91,9 +92,11 @@ export default function BackGround() {
             {renderImage(Boss)}
           </Image>
           <Description>
-            2019 - 2020 Estagiário na Dextra
+            (2019 - 2020) Estagiário na Dextra
             <br />
-            2020 - Presente Desenvolvedor Júnior Dextra
+            (2020 - 2021) Desenvolvedor Júnior Dextra
+            <br />
+            (2021 - Presente) Desenvolvedor Pleno Corebiz
           </Description>
         </Content>
       </RightCard>
@@ -115,9 +118,22 @@ export default function BackGround() {
 
       </Card>
 
-      <Div>
-        <Projects />
-      </Div>
+      <div id="projects">
+        <div className="projetos-title">
+          Projetos
+        </div>
+        <ProjectContainer>
+          {myProjects.map((project) => (
+            <ProjectCard
+              title={project.title}
+              description={project.description}
+              tecnologies={project.tecnologies}
+              src={project.src}
+            />
+          ))}
+        </ProjectContainer>
+      </div>
+
       <Div>
         <SendMeEmail>
           {t('email.message')}

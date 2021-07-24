@@ -1,7 +1,6 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
-import Modal from '@material-ui/core/Modal';
-import { makeStyles } from '@material-ui/core/styles';
+import './index.css';
 import Avatar from '@material-ui/core/Avatar';
 import {
   ChipJs, ChipHtml, ChipCss, ChipReact, ChipFlutter, ChipSpring, ChipNode, ChipPostgres,
@@ -15,19 +14,6 @@ import flutter from '../../resources/flutter.png';
 import spring from '../../resources/spring.png';
 import node from '../../resources/node.png';
 import postgres from '../../resources/postgres.png';
-
-function getModalStyle() {
-  if (window.innerWidth > 768) {
-    return {
-      top: '25%',
-      left: '25%',
-    };
-  }
-  return {
-    top: '25%',
-    left: '15%',
-  };
-}
 
 const renderChips = (type) => {
   if (type === 'JavaScript') {
@@ -119,41 +105,24 @@ const renderChips = (type) => {
   }
 };
 
-const useStyles = makeStyles((theme) => ({
-  paper: {
-    position: 'absolute',
-    width: 'calc(100% / 2)',
-    backgroundColor: 'rgba(105, 105, 105, 0.9)',
-    border: '2px solid #000',
-    boxShadow: theme.shadows[5],
-    padding: theme.spacing(2, 4, 3),
-    color: 'yellow',
-  },
-}));
-
-function ModalProjects({ open, handleClose, myProjects }) {
-  const [modalStyle] = React.useState(getModalStyle);
-  const classes = useStyles();
+export default function ProjectCard({
+  title, description, tecnologies, src,
+}) {
   return (
-    <div>
-      <Modal
-        aria-labelledby="simple-modal-title"
-        aria-describedby="simple-modal-description"
-        open
-        onClose={handleClose}
-      >
-        <div style={modalStyle} className={classes.paper}>
-          <h2 id="simple-modal-title">{myProjects[open].title}</h2>
-          <p id="simple-modal-description">
-            {myProjects[open].description}
-          </p>
-          <footer style={{ marginBottom: '10px' }}>Tecnologias</footer>
-          {myProjects[open].tecnologies.map((tecnologie) => renderChips(tecnologie))}
-
+    <div className="card">
+      <div className="face front">
+        <div className="content">
+          <h3>{title}</h3>
+          <h4>{description}</h4>
+          <div className="chips">
+            {tecnologies.map((tecnologie) => renderChips(tecnologie))}
+          </div>
         </div>
-      </Modal>
+      </div>
+      <div className="face back">
+        <img src={src} width="90%" height="90%" alt={title} />
+      </div>
+
     </div>
   );
 }
-
-export default ModalProjects;
