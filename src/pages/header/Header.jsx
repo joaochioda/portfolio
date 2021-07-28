@@ -90,11 +90,11 @@ export default function Header() {
         <Div30Justify>
           <Flag>
             <div className="maincontainer" onClick={() => (flag === 'Brasil' ? changeLanguage('en') : changeLanguage('pt'))} role="button" tabIndex={0}>
-              <div className="thecard">
-                <div className="thefront">
+              <div className="card">
+                <div className="face front">
                   {brazilFlag}
                 </div>
-                <div className="theback">
+                <div className="face back">
                   {euaFlag}
                 </div>
 

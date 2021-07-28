@@ -77,43 +77,26 @@ export const Label = styled.span`
 
 export const Flag = styled.div`
 @media (min-width: 768px) {
-  .maincontainer {
+  .card {
     position: relative;
     width: 46px;
     height: 33px;
-  }
-  
-  .thecard {
-    position: absolute;
-    width: 100%;
-    height: 100%;
     transform-style: preserve-3d;
-    transition: all 0.5s ease-in-out;
-    margin: 0;
+    perspective: 500px;
   }
   
-  .thefront {
+  .card .face {
     position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
-    background: red;
-    color: purple;
-  }
-  
-  .theback {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    background: gray;
-    color: purple;
-    transform: rotateY(180deg);
-  }
-  
-  .thecard:hover {
-    transform: rotateY(180deg)
-  }
+}
+.face.back img {
+  border-radius: 0;
+}
+
   .mobile {
     display:none;
   }
