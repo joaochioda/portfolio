@@ -28,6 +28,20 @@ export const myProjects = [
     git: 'https://github.com/joaochioda/nlw6-react',
   },
   {
+    title: 'Gerenciar partidas com discord',
+    description: 'Projeto desenvolvido no nlw6 da rocketseat. O projeto permite que o usuário crie uma partida gerenciada e compartilhe no discord. Também foi utilizado login com discord',
+    tecnologies: ['ReactNative', 'JavaScript', 'CSS'],
+    src: 'https://user-images.githubusercontent.com/47106171/127779618-3eaa2c8d-5b75-4f08-8891-1604b8ca3883.gif',
+    git: 'https://github.com/joaochioda/nlw6-react-native',
+  },
+  {
+    title: 'Visualizar elo das pessoas no LoL',
+    description: 'Projeto desenvolvido para testar api do League of Legends com o discord. Ao digitar um nick no chat, o bot traz o elo de todas as pessoas da partida.',
+    tecnologies: ['JavaScript'],
+    src: 'https://user-images.githubusercontent.com/47106171/104138965-cb82c480-5386-11eb-8b4b-1c7f44c64bc3.gif',
+    git: 'https://github.com/joaochioda/discord-bot-lol',
+  },
+  {
     title: 'Super Calculadora',
     description: 'Projeto desenvolvido no bootcamp da IGTI. O objetivo era desenvolver uma super calculadora utlizando apenas HTML e JavaScript.',
     tecnologies: ['JavaScript', 'HTML', 'CSS'],
